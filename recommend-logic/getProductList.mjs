@@ -21,7 +21,7 @@ export default async function getProductList(searchParams, recList) {
 
   // Add pronouns to query
   let modifiedQuery = query;
-  const pronouns = searchParams.get("pronouns");
+  const pronouns = searchParams["pronouns"];
   if (pronouns) {
     if (pronouns == "male") {
       modifiedQuery += " for men";

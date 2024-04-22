@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { DUMMY_REC_LIST } from "../../../src/utilities/dummy";
+import { DUMMY_REC_LIST } from "../constants/dummy.mjs";
 
 export default async function getRecList(searchParams) {
   const returnDummy = searchParams["returnDummy"];

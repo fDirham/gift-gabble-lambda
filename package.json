@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "node ./local-api/index.mjs",
-    "build": "rm -rf .dist && esbuild ./lambda-wrapper/* --entry-names=[dir]/[name] --bundle --minify --sourcemap --platform=node --target=node20 --outdir=.dist"
+    "build": "rm -rf .dist && rm -rf .upload && esbuild ./lambda-wrapper/* --entry-names=[dir]/[name] --bundle --minify --sourcemap --platform=node --target=node20 --outdir=.dist && node utilities/zipDist.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -12,7 +12,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "openai": "^4.38.3"
+    "openai": "^4.38.3",
+    "zip-a-folder": "^3.1.6"
   },
   "devDependencies": {
     "esbuild": "^0.20.2"

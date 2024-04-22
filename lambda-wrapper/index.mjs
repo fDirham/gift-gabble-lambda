@@ -22,9 +22,13 @@ export const handler = async (event) => {
     body = { error: err };
   }
 
-  // TODO implement
   const response = {
     statusCode,
+    headers: {
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+    },
     body: JSON.stringify(body),
   };
   return response;

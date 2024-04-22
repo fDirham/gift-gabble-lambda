@@ -61,9 +61,6 @@ export default async function getProductList(searchParams, recList) {
       }
     );
 
-    const budget = searchParams["budget"];
-    const budgetNum = budget ? parseFloat(budget) : 0;
-
     const resObj = await res.json();
     const resList = resObj.search_results;
     for (let j = 0; j < resList.length; j++) {
@@ -74,11 +71,8 @@ export default async function getProductList(searchParams, recList) {
         price = curr.price.symbol + curr.price.value;
         priceNum = parseFloat(curr.price.value);
       } catch {
-        continue;
-      }
-
-      if (budgetNum > 0 && priceNum > budgetNum + 5) {
-        continue;
+        price = undefined;
+        priceNum = undefined;
       }
 
       const toAdd = {
@@ -89,6 +83,7 @@ export default async function getProductList(searchParams, recList) {
         rating: curr.rating,
         ratingsTotal: curr.ratings_total,
         price,
+        priceNum,
         isPrime: curr.is_prime || false,
       };
       productList.push(toAdd);

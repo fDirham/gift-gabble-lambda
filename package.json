@@ -1,10 +1,10 @@
 {
-  "name": "logic",
+  "name": "gift-gabble-rec-lambda",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "dev": "node ./local-api/index.mjs"
+    "dev": "node ./local-api/index.mjs",
+    "build": "rm -rf .dist && esbuild ./lambda-wrapper/* --entry-names=[dir]/[name] --bundle --minify --sourcemap --platform=node --target=node20 --outdir=.dist"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +13,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "openai": "^4.38.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.2"
   }
 }

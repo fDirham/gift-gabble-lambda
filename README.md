@@ -14,4 +14,13 @@ We'll be using AWS lambda for this.
 }
 ```
 
-- We'll use webpack to bundle everything together to zip and upload to aws lambda
+- We'll use esbuild to bundle everything together to zip and upload to aws lambda
+
+## How to test
+
+- `npm run dev`
+
+## How to update lambda
+
+- Reference instructions: https://aws.amazon.com/blogs/compute/optimizing-node-js-dependencies-in-aws-lambda/
+- Run `npm run build` then zip up contents of .dist folder, then upload to lambda

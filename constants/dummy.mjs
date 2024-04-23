@@ -8,8 +8,8 @@ export const DUMMY_SEARCH_CONFIG = {
   whoTwo: "???",
   why: "bday",
   whyExtra: "",
-  desc: "Lorem ipsum baba yetu mf",
-  budget: 0,
+  desc: "She likes pokemon and the environment",
+  budget: 5,
   pronouns: "female",
 };
 

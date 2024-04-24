@@ -13,10 +13,10 @@ app.listen(PORT, () => {
   console.log("Server Listening on PORT:", PORT);
 });
 
-app.get("/", async (request, response) => {
+app.post("/", async (request, response) => {
   try {
-    console.log("Starting recommend", { queryParams: request.query });
-    const res = await recommendLogic(request.query);
+    console.log("Starting recommend", { body: request.body });
+    const res = await recommendLogic(request.body);
 
     response.status(res.statusCode);
     response.send(res.body);

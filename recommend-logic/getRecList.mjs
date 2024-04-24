@@ -1,22 +1,23 @@
 import OpenAI from "openai";
 import { DUMMY_REC_LIST } from "../constants/dummy.mjs";
 
-export default async function getRecList(searchParams) {
-  const returnDummy = searchParams["returnDummy"];
-  const isDummy = returnDummy === "1";
+export default async function getRecList(args) {
+  // Some params
+  const { formResponse, isDummy, size } = args;
   if (isDummy) return { isError: false, recList: DUMMY_REC_LIST };
 
-  let who = searchParams["who"];
-  let why = searchParams["why"];
-  let whyExtra = searchParams["whyExtra"];
-  let desc = searchParams["desc"];
-  let budget = searchParams["budget"];
-  let pronouns = searchParams["pronouns"];
+  let who = formResponse["who"];
+  let why = formResponse["why"];
+  let whyExtra = formResponse["whyExtra"];
+  let desc = formResponse["desc"];
+  let budget = formResponse["budget"];
+  let giftNotes = formResponse["giftNotes"];
+  let pronouns = formResponse["pronouns"];
 
   const openai = new OpenAI();
 
   const systemPrompt = `
-  You are a creative gift recommendation machine. When prompted, you output 10 interesting and personal gift recommendations in JSON list format. The gifts have to be products purchasable online. Keep responses short. Here is an example output format:
+  You are a highly creative gift recommendation machine. When asked, you output ${size} personalized and unique gift recommendations in JSON list format. These gifts must be material goods. Keep responses short. Here is an example output format:
 ###
 [
 "rec1",
@@ -26,21 +27,24 @@ export default async function getRecList(searchParams) {
 ###
   `;
 
+  const userPromptComponents = [];
+
+  const extendedWho = `I want to get a gift for my ${who}`;
+  userPromptComponents.push(extendedWho);
+
   let extendedWhy = why;
   switch (extendedWhy) {
     case "bday":
-      extendedWhy = ". Their birthday is coming up";
+      extendedWhy = "Their birthday is coming up";
       break;
     case "anniversary":
-      extendedWhy = ". Our anniversary is coming up";
+      extendedWhy = "Our anniversary is coming up";
       break;
     case "wedding":
-      extendedWhy = ". Their wedding is coming up";
+      extendedWhy = "Their wedding is coming up";
       break;
     case "other":
-      if (whyExtra) {
-      }
-      extendedWhy = ". Why? " + whyExtra;
+      extendedWhy = "Why? " + whyExtra;
     case "na":
       extendedWhy = "";
       break;
@@ -48,24 +52,31 @@ export default async function getRecList(searchParams) {
       extendedWhy = "";
       break;
   }
+  if (extendedWhy) {
+    userPromptComponents.push(extendedWhy);
+  }
+
+  let extendedDesc = `A little bit about my ${who}: `;
+  extendedDesc += desc.trim();
+
+  userPromptComponents.push(extendedDesc);
 
   let extendedBudget = budget;
   if (budget) {
     if (budget !== "0") {
-      extendedBudget = `I only have a budget of $${budget}.`;
+      extendedBudget = `I only have a budget of $${budget}`;
     } else {
-      extendedBudget = " ";
+      extendedBudget = "";
     }
   }
+  if (extendedBudget) {
+    userPromptComponents.push(extendedBudget);
+  }
 
-  let extendedDesc = desc;
-  extendedDesc = extendedDesc.trim();
-
-  const userPrompt = `
-  I want to get a gift for my ${who}${extendedWhy}. A little about my ${who}: ${desc?.trim()}.${extendedBudget}What should I get?
-  `;
-
+  const userPrompt = userPromptComponents.join(". ");
   let openaiRes = "";
+  let promptTokens = 0;
+  let completionTokens = 0;
 
   try {
     const completion = await openai.chat.completions.create({
@@ -76,15 +87,18 @@ export default async function getRecList(searchParams) {
           content: userPrompt,
         },
       ],
-      model: "gpt-3.5-turbo",
+      model: "gpt-4-turbo",
     });
 
     openaiRes = completion.choices[0].message.content;
+    promptTokens = completion.usage.prompt_tokens;
+    completionTokens = completion.usage.completion_tokens;
   } catch (e) {
     console.error("Openai failed", e);
     return { isError: true, statusCode: 500, errorObj: { error: e } };
   }
 
+  openaiRes = openaiRes.replaceAll("###", "");
   let recList = [];
   try {
     recList = JSON.parse(openaiRes);
@@ -111,5 +125,5 @@ export default async function getRecList(searchParams) {
     };
   }
 
-  return { isError: false, recList };
+  return { isError: false, recList, promptTokens, completionTokens };
 }

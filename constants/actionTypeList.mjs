@@ -1,0 +1,6 @@
+const ACTION_TYPE_DICT = {
+  REC: "REC",
+  RETRIEVE_IMAGE: "RETRIEVE_IMAGE",
+};
+
+export default ACTION_TYPE_DICT;

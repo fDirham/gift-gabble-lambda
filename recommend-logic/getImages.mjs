@@ -1,4 +1,3 @@
-import axios from "axios";
 import { getTimeDifference, timeoutPromise } from "../utilities/helpers.mjs";
 
 export default async function getImages(args) {
@@ -19,29 +18,40 @@ export default async function getImages(args) {
       try {
         await timeoutPromise(kwIdx * RETRIEVE_DELAY_MS);
 
-        const res = await axios.post(
-          "https://realtime.oxylabs.io/v1/queries",
-          {
-            source: "google_search",
-            domain: "com",
-            query: kw + " site:amazon.com",
-            parse: true,
-            context: [
-              {
-                key: "tbm",
-                value: "isch",
-              },
-            ],
-          },
-          {
-            auth: {
-              username: process.env.OXYLABS_USERNAME,
-              password: process.env.OXYLABS_PASSWORD,
+        const reqBody = {
+          source: "google_search",
+          domain: "com",
+          query: kw + " site:amazon.com",
+          parse: true,
+          context: [
+            {
+              key: "tbm",
+              value: "isch",
             },
-          }
+          ],
+        };
+
+        const auth = {
+          username: process.env.OXYLABS_USERNAME,
+          password: process.env.OXYLABS_PASSWORD,
+        };
+
+        const reqHeaders = new Headers();
+        reqHeaders.set(
+          "Authorization",
+          "Basic " +
+            Buffer.from(auth.username + ":" + auth.password).toString("base64")
         );
 
-        let imageList = res.data.results[0].content.results.organic;
+        const res = await fetch("https://realtime.oxylabs.io/v1/queries", {
+          method: "POST",
+          body: JSON.stringify(reqBody),
+          headers: reqHeaders,
+        });
+
+        const resData = await res.json();
+
+        let imageList = resData.results[0].content.results.organic;
         const asinSet = new Set();
         const newImageList = [];
         imageList.forEach((imgObj) => {

@@ -5,8 +5,16 @@ export default function getAmazonSearchLinks(args) {
 
   for (let i = 0; i < recList.length; i++) {
     const keywords = recList[i];
-    // TODO
-    toReturn[keywords] = "http://someamazonlink.com";
+
+    "".trim().toLowerCase().to;
+    const query = keywords
+      .toLowerCase()
+      .replace(/[^a-z0-9]/gim, " ")
+      .replace(/\s+/g, " ")
+      .replace(/[\s+]/g, "+")
+      .trim();
+
+    toReturn[keywords] = `https://www.amazon.com/s?k=${query}&tag=fbdlabs-20`;
   }
   return toReturn;
 }

@@ -1,11 +1,93 @@
+import axios from "axios";
+import { getTimeDifference, timeoutPromise } from "../utilities/helpers.mjs";
+
 export default async function getImages(args) {
-  const { retrieveList, isDummy } = args;
+  const RETRIEVE_DELAY_MS = 500;
+
+  const { retrieveList, isDummy, numImagesPerRec } = args;
+  if (isDummy) {
+    // TODO
+    return { isError: false, imageDict: {}, timeDiff: 0 };
+  }
+
+  const startDate = new Date();
 
   const toReturn = {};
-  for (let i = 0; i < retrieveList.length; i++) {
-    const keywords = retrieveList[i];
-    // TODO
-    toReturn[keywords] = "http://someimage.com";
-  }
-  return toReturn;
+
+  const imagesList = await Promise.all(
+    retrieveList.map(async (kw, kwIdx) => {
+      try {
+        await timeoutPromise(kwIdx * RETRIEVE_DELAY_MS);
+
+        const res = await axios.post(
+          "https://realtime.oxylabs.io/v1/queries",
+          {
+            source: "google_search",
+            domain: "com",
+            query: kw + " site:amazon.com",
+            parse: true,
+            context: [
+              {
+                key: "tbm",
+                value: "isch",
+              },
+            ],
+          },
+          {
+            auth: {
+              username: process.env.OXYLABS_USERNAME,
+              password: process.env.OXYLABS_PASSWORD,
+            },
+          }
+        );
+
+        let imageList = res.data.results[0].content.results.organic;
+        const asinSet = new Set();
+        const newImageList = [];
+        imageList.forEach((imgObj) => {
+          let linkUrl = imgObj.link;
+          const DP_SUBSTR = "/dp/";
+          const dpIdx = linkUrl.indexOf(DP_SUBSTR);
+          if (dpIdx < 0) {
+            return;
+          }
+
+          linkUrl = linkUrl.slice(dpIdx + DP_SUBSTR.length);
+
+          const ampsIdx = linkUrl.indexOf("&");
+          if (ampsIdx > 0) {
+            linkUrl = linkUrl.slice(0, ampsIdx);
+          }
+
+          const asin = linkUrl;
+          if (asinSet.has(asin)) return;
+
+          newImageList.push(imgObj.image);
+          asinSet.add(asin);
+        });
+        imageList = newImageList;
+        if (imageList.length > numImagesPerRec)
+          imageList = imageList.slice(0, numImagesPerRec);
+
+        return {
+          isError: false,
+          kw,
+          data: imageList,
+        };
+      } catch (error) {
+        console.log(kw, error);
+        return { isError: true, kw, error };
+      }
+    })
+  );
+
+  imagesList.forEach((obj) => {
+    if (!obj.isError) {
+      toReturn[obj.kw] = obj.data;
+    }
+  });
+
+  const endDate = new Date();
+  const timeDiff = getTimeDifference(startDate, endDate);
+  return { isError: false, imageDict: toReturn, timeDiff };
 }

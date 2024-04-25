@@ -17,11 +17,12 @@ export default async function recommendLogic(bodyParams) {
 
   if (actionType == ACTION_TYPE_DICT.REC) {
     // Recommend
-    const REC_SIZE = 30;
+    const REC_SIZE = 10;
     const recListArgs = {
       formResponse: bodyParams.formResponse,
       isDummy: dummyConfig.all || dummyConfig.getRecList,
       size: REC_SIZE,
+      oldResponses: bodyParams.oldResponses || null,
     };
     const recRes = await getRecList(recListArgs);
     if (recRes.isError) {
@@ -29,15 +30,6 @@ export default async function recommendLogic(bodyParams) {
       return { body: recRes.errorObj, statusCode: statusCode };
     }
     const recList = recRes.recList;
-
-    // Get images
-    const NUM_RECS_WITH_IMAGES = 6;
-    const recWithImageList = recList.slice(0, NUM_RECS_WITH_IMAGES);
-    const getImagesArgs = {
-      retrieveList: recWithImageList,
-      isDummy: dummyConfig.all || dummyConfig.getImages,
-    };
-    const imageDict = await getImages(getImagesArgs);
 
     // Get affiliate link
     const getAmazonSearchLinksArgs = {
@@ -50,7 +42,6 @@ export default async function recommendLogic(bodyParams) {
     const finalRecList = recList.map((rec) => {
       return {
         rec,
-        imageUrl: imageDict[rec] || null,
         amazonSearchLink: amazonSearchLinkDict[rec] || null,
       };
     });
@@ -64,6 +55,9 @@ export default async function recommendLogic(bodyParams) {
         oaiPromptTokens: recRes.promptTokens,
         oaiCompletionTokens: recRes.completionTokens,
       };
+      bodyToReturn.duration = {
+        getRecListDuration: recRes.timeDiff,
+      };
     }
 
     return {
@@ -74,13 +68,28 @@ export default async function recommendLogic(bodyParams) {
 
   if (actionType == ACTION_TYPE_DICT.RETRIEVE_IMAGE) {
     const { retrieveImageForRecList } = bodyParams;
+    const NUM_IMAGES_PER_REC = 5;
     const getImagesArgs = {
       retrieveList: retrieveImageForRecList,
       isDummy: dummyConfig.all || dummyConfig.getImages,
+      numImagesPerRec: NUM_IMAGES_PER_REC,
     };
-    const imageDict = await getImages(getImagesArgs);
+    const imgRes = await getImages(getImagesArgs);
+    if (imgRes.isError) {
+      return { body: "Failed to get images", statusCode: 500 };
+    }
+    const imageDict = imgRes.imageDict;
 
-    return { body: imageDict, statusCode: 200 };
+    const bodyToReturn = {
+      imageDict,
+    };
+
+    if (showDebug) {
+      bodyToReturn.duration = {
+        getImagesDuration: imgRes.timeDiff,
+      };
+    }
+    return { body: bodyToReturn, statusCode: 200 };
   }
 
   return { body: { error: "Invalid inputs" }, statusCode: 400 };

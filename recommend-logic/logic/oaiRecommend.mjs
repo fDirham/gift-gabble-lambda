@@ -1,11 +1,11 @@
 import OpenAI from "openai";
-import { DUMMY_REC_LIST } from "../constants/dummy.mjs";
-import { getTimeDifference } from "../utilities/helpers.mjs";
+import { DUMMY_REC_LIST } from "../../constants/dummy.mjs";
+import { getTimeDifference } from "../../utilities/helpers.mjs";
 
-export default async function getRecList(args) {
+export default async function oaiRecommend(args) {
   // Some params
   const { formResponse, isDummy, size, oldIdeaList } = args;
-  if (isDummy) return { isError: false, recList: DUMMY_REC_LIST };
+  if (isDummy) return { isError: false, ideaList: DUMMY_REC_LIST };
 
   const startDate = new Date();
 
@@ -137,38 +137,35 @@ gift_recs: [
     promptTokens = completion.usage.prompt_tokens;
     completionTokens = completion.usage.completion_tokens;
   } catch (e) {
-    console.error("Openai failed", e);
+    console.error("OpenAI API call failed", e);
     return { isError: true, statusCode: 500, errorObj: { error: e } };
   }
 
-  let recList = [];
+  let ideaList = [];
   try {
-    recList = JSON.parse(openaiRes).gift_recs;
+    ideaList = JSON.parse(openaiRes).gift_recs;
   } catch (e) {
-    console.error(
-      "Parsing recommendations failed",
-      { openaiRes, userPrompt },
-      e
-    );
+    console.error("Parsing recommendations failed", openaiRes, e);
 
     return {
       isError: true,
       statusCode: 500,
-      errorObj: { error: "Unable to parse recommendations." },
+      errorObj: "Unable to parse recommendations.",
     };
   }
 
-  if (!recList || !recList.length) {
-    console.error("No recommendations", recList);
+  if (!ideaList || !ideaList.length) {
+    console.error("No recommendations", ideaList);
     return {
       isError: true,
       statusCode: 404,
-      errorObj: { error: "No recommendations." },
+      errorObj: "No recommendations",
     };
   }
 
   const endDate = new Date();
   const timeDiff = getTimeDifference(startDate, endDate);
 
-  return { isError: false, recList, promptTokens, completionTokens, timeDiff };
+  // TODO: Debug
+  return { isError: false, ideaList };
 }

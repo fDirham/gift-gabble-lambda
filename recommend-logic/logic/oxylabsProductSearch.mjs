@@ -1,17 +1,15 @@
-import { getTimeDifference, timeoutPromise } from "../utilities/helpers.mjs";
+import { getTimeDifference, timeoutPromise } from "../../utilities/helpers.mjs";
 
-export default async function getImages(args) {
-  const RETRIEVE_DELAY_MS = 500;
+export default async function oxylabsProductSearch(args) {
+  const RETRIEVE_DELAY_MS = 250;
 
-  const { isDummy, numImagesPerRec } = args;
+  const { isDummy } = args;
   if (isDummy) {
     // TODO
-    return { isError: false, imageDict: {}, timeDiff: 0 };
+    return { isError: false, dataDict: {}, timeDiff: 0 };
   }
 
   const startDate = new Date();
-
-  const toReturn = {};
 
   let { retrieveList } = args;
   const MAX_RETRIEVE_SIZE = 6;
@@ -19,7 +17,7 @@ export default async function getImages(args) {
     retrieveList = retrieveList.slice(0, MAX_RETRIEVE_SIZE);
   }
 
-  const imagesList = await Promise.all(
+  const productDataList = await Promise.all(
     retrieveList.map(async (kw, kwIdx) => {
       try {
         await timeoutPromise(kwIdx * RETRIEVE_DELAY_MS);
@@ -29,6 +27,8 @@ export default async function getImages(args) {
           domain: "com",
           query: kw + " site:amazon.com",
           parse: true,
+          geo_location: "California,United States", //TODO: Localize per user
+          limit: 6,
         };
 
         const auth = {
@@ -50,39 +50,34 @@ export default async function getImages(args) {
         });
 
         const resData = await res.json();
+        const resultsObj = resData.results[0].content.results;
+        const organicResults = resultsObj.organic;
+        const productList = [];
 
-        let imageList = resData.results[0].content.results.organic;
-        const asinSet = new Set();
-        const newImageList = [];
-        imageList.forEach((imgObj) => {
-          let linkUrl = imgObj.link;
-          const DP_SUBSTR = "/dp/";
-          const dpIdx = linkUrl.indexOf(DP_SUBSTR);
-          if (dpIdx < 0) {
-            return;
+        // Process organic results
+        if (organicResults && organicResults.length) {
+          for (let i = 0; i < organicResults.length; i++) {
+            const obj = organicResults[i];
+            const { url, price, title, images, currency, rating } = obj;
+            if (!url.includes("/dp/")) {
+              continue;
+            }
+
+            const toAdd = { url, title, images };
+            if (currency && currency == "USD" && price) {
+              toAdd.price = price;
+            }
+            if (rating) {
+              toAdd.rating = rating;
+            }
+            productList.push(toAdd);
           }
-
-          linkUrl = linkUrl.slice(dpIdx + DP_SUBSTR.length);
-
-          const ampsIdx = linkUrl.indexOf("&");
-          if (ampsIdx > 0) {
-            linkUrl = linkUrl.slice(0, ampsIdx);
-          }
-
-          const asin = linkUrl;
-          if (asinSet.has(asin)) return;
-
-          newImageList.push(imgObj.image);
-          asinSet.add(asin);
-        });
-        imageList = newImageList;
-        if (imageList.length > numImagesPerRec)
-          imageList = imageList.slice(0, numImagesPerRec);
+        }
 
         return {
           isError: false,
           kw,
-          data: imageList,
+          data: productList,
         };
       } catch (error) {
         console.log(kw, error);
@@ -91,7 +86,8 @@ export default async function getImages(args) {
     })
   );
 
-  imagesList.forEach((obj) => {
+  const toReturn = {};
+  productDataList.forEach((obj) => {
     if (!obj.isError) {
       toReturn[obj.kw] = obj.data;
     }
@@ -99,5 +95,6 @@ export default async function getImages(args) {
 
   const endDate = new Date();
   const timeDiff = getTimeDifference(startDate, endDate);
-  return { isError: false, imageDict: toReturn, timeDiff };
+
+  return { isError: false, productDataDict: toReturn, timeDiff };
 }

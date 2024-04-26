@@ -1,4 +1,4 @@
-import ACTION_TYPE_DICT from "../constants/actionTypeList.mjs";
+import ACTION_TYPE_DICT from "./actionRoutes/_actionRouteDict.mjs";
 
 export default function validateInputs(bodyParams) {
   const MAX_USER_INPUT_LENGTH = 205;

@@ -1,0 +1,424 @@
+{
+  "kind": "customsearch#search",
+  "url": {
+    "type": "application/json",
+    "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+  },
+  "queries": {
+    "request": [
+      {
+        "title": "Google Custom Search - pokemon tea pot inurl:amazon.com inurl:/dp/",
+        "totalResults": "17200",
+        "searchTerms": "pokemon tea pot inurl:amazon.com inurl:/dp/",
+        "count": 10,
+        "startIndex": 1,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "31d4cccba9c8341de"
+      }
+    ],
+    "nextPage": [
+      {
+        "title": "Google Custom Search - pokemon tea pot inurl:amazon.com inurl:/dp/",
+        "totalResults": "17200",
+        "searchTerms": "pokemon tea pot inurl:amazon.com inurl:/dp/",
+        "count": 10,
+        "startIndex": 11,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "31d4cccba9c8341de"
+      }
+    ]
+  },
+  "context": {
+    "title": " gift-gabble"
+  },
+  "searchInformation": {
+    "searchTime": 0.396153,
+    "formattedSearchTime": "0.40",
+    "totalResults": "17200",
+    "formattedTotalResults": "17,200"
+  },
+  "spelling": {
+    "correctedQuery": "pokemon teapot inurl:amazon.com inurl:/dp/",
+    "htmlCorrectedQuery": "pokemon <b><i>teapot</i></b> inurl:amazon.com inurl:/dp/"
+  },
+  "items": [
+    {
+      "kind": "customsearch#result",
+      "title": "Pokémon 143123 Pikachu Earthenware Pot, For One ... - Amazon.com",
+      "htmlTitle": "Pokémon 143123 Pikachu Earthenware Pot, For One ... - Amazon.com",
+      "link": "https://www.amazon.com/143123-Earthenware-Dishwasher-Microwave-Tableware/dp/B0BG4JGB7R",
+      "displayLink": "www.amazon.com",
+      "snippet": "Buy Pokémon 143123 Pikachu Earthenware Pot, For One Person, Dishwasher Safe, Microwave Safe, Direct Fire, Tableware, Pikachu, Pokemon Goods, Approx.",
+      "htmlSnippet": "Buy <b>Pokémon</b> 143123 <b>Pikachu</b> Earthenware <b>Pot</b>, For One Person, Dishwasher Safe, Microwave Safe, Direct Fire, Tableware, <b>Pikachu</b>, <b>Pokemon</b> Goods, Approx.",
+      "cacheId": "Y9fNwaIzOwsJ",
+      "formattedUrl": "https://www.amazon.com/143123-Earthenware.../dp/B0BG4JGB7R",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/143123-Earthenware.../<b>dp</b>/B0BG4JGB7R",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6EE8wsHrW4F_IyiKljsQJ7GuPhTGcFXNFnOOsjRuISVFSCIYP90BWkZMq&s",
+            "width": "259",
+            "height": "194"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/31kouzKR0VL._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFIVE%2cBottomLeft%2c360%2c-6_SR600%2c315_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "Pokémon 143123 Pikachu Earthenware Pot, For One Person, Dishwasher Safe, Microwave Safe, Direct Fire, Tableware, Pikachu, Pokemon Goods, Approx. 22.0 fl oz (650 ml), Face Up, Made in Japan",
+            "og:url": "https://www.amazon.com/dp/B0BG4JGB7R/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: Pokémon 143123 Pikachu Earthenware Pot, For One Person, Dishwasher Safe, Microwave Safe, Direct Fire, Tableware, Pikachu, Pokemon Goods, Approx. 22.0 fl oz (650 ml), Face Up, Made in Japan : Home & Kitchen",
+            "og:description": "Country of Manufacture: Japan. [Shipping by Amazon.co.jp, Distributor Amazon.co.jp] This product is an authentic product from the manufacturer. From the popular Pokémon character Pikachu face up series. This is a cute design with Pikachu you see here. Dishwasher, microwave, and direct fire safe. ...",
+            "encrypted-slate-token": "AnYxwVaAVFxV+ndzDWcSk8orzkQsM0GZ/kb2+g1ZepjsjvynunAy6rbpEuCwYFKsIWIM9MAySNVnUB9r5PbsDZtaqURlmECOwkkLatj/uUHW2qCtYoongF9MZWmtFJXhGthKckYmc5jIvac3yykztFe9zyHmUUzuTEQSHCY5FiiPCQvZVBHKQ1QsEE+iJAe/Q54XgnuOhFL1yYTaFUfInF+gxrFwi4UOk3Icnx4Bziy3Lc7rV5Xx4rGLE21SPR6zcJNvPROIXnRtJFLKNz6Yl2EpAw=="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/51EI3rv++AL._AC_UF894,1000_QL80_.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Amazon.com: 2 Cup Pretty Dasies on Black Reversible Tea Pot Cozy",
+      "htmlTitle": "Amazon.com: 2 Cup Pretty Dasies on Black Reversible <b>Tea Pot</b> Cozy",
+      "link": "https://www.amazon.com/Pretty-Dasies-Black-Reversible-Cozy/dp/B09WM2VQ5D?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A2NN3CZD83PKH3",
+      "displayLink": "www.amazon.com",
+      "snippet": "This attractive Tea Cozy has an extra thick insulated lining to keep your tea warm. It's a small size tea cozy, with a fabric padded bottom and a drawstring ...",
+      "htmlSnippet": "This attractive <b>Tea</b> Cozy has an extra thick insulated lining to keep your <b>tea</b> warm. It&#39;s a small size <b>tea</b> cozy, with a fabric padded bottom and a drawstring&nbsp;...",
+      "cacheId": "ZAW4cWJnr30J",
+      "formattedUrl": "https://www.amazon.com/Pretty.../dp/B09WM2VQ5D?...ps...",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/Pretty.../<b>dp</b>/B09WM2VQ5D?...ps...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7YTGzWyeZyrXw-Aqj7qrca8wWte3KcfaEX6Y8P5Vk5n-95G-sWyTuTXTz&s",
+            "width": "294",
+            "height": "171"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/41atJ5BDszL._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "2 Cup Pretty Dasies on Black Reversible Tea Pot Cozy",
+            "og:url": "https://www.amazon.com/dp/B09WM2VQ5D/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: 2 Cup Pretty Dasies on Black Reversible Tea Pot Cozy : Handmade Products",
+            "og:description": "This attractive Tea Cozy has an extra thick insulated lining to keep your tea warm. It's a small size tea cozy, with a fabric padded bottom and a drawstring top, with a slot on either side for handle and spout. This makes the pot accessible without taking the cozy off. It will fit all 2 cup teapo...",
+            "encrypted-slate-token": "AnYxXHfS4yoGFKSsoAHflHFeQ0C4lLKUPT1hEqP51YMPmbLJ4uZxGZPzRA7fUwr1QIkObN8AVEeDsP5wQU+n93x0EW4kq+w7p9J0wCLBAsDwbpvjJyc/8Zbp1Cu/zH2dw2uKoKwxzz2RwLzmyD6CMlaHA+D4I87DMrOO3HaGbXZPpjc3gCV39A7DTMl6qiDXP8vskYDFKXNSu0aTztNamYIfHNFV0lR3hSup5i3i03A8Ra/YeyF1+Uy3IAjjpVrtz2jL9xDOgR+xwZPztle/CGT1qJk="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/41atJ5BDszL._SR600%2C315_PIWhiteStrip%2CBottomLeft%2C0%2C35_SCLZZZZZZZ_FMpng_BG255%2C255%2C255.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Paladone Gameboy Heat Changing Coffee Mug - Gift ... - Amazon.com",
+      "htmlTitle": "Paladone Gameboy Heat Changing Coffee Mug - Gift ... - Amazon.com",
+      "link": "https://www.amazon.com/Paladone-Gameboy-Heat-Changing-Coffee/dp/B06WRVFRJV",
+      "displayLink": "www.amazon.com",
+      "snippet": "EXIGENT Gamer Pipe Ceramic Coffee Tea Cup Mug Collectible 15 Oz Ounces (Pipe) ... Cup, Gaming Coffee Cup, 13Oz ... JUST FUNKY POKEMON Coffee Mug. JUST FUNKY POKEMON ...",
+      "htmlSnippet": "EXIGENT Gamer Pipe Ceramic Coffee <b>Tea Cup</b> Mug Collectible 15 Oz Ounces (Pipe) ... Cup, Gaming Coffee Cup, 13Oz ... JUST FUNKY <b>POKEMON</b> Coffee Mug. JUST FUNKY <b>POKEMON</b>&nbsp;...",
+      "formattedUrl": "https://www.amazon.com/Paladone-Gameboy-Heat.../dp/B06WRVFRJV",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/Paladone-Gameboy-Heat.../<b>dp</b>/B06WRVFRJV",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGWScdj9vay_2BgPHe-CS-xAA6OeTh7_jgKtP2ytjgdMEKLfXknWEc0Ir3&s",
+            "width": "224",
+            "height": "224"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/315GZLJ0FzL._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFOURANDHALF%2cBottomLeft%2c360%2c-6_SR600%2c315_ZA7%252C682%2c445%2c290%2c400%2c400%2cAmazonEmberBold%2c12%2c4%2c0%2c0%2c5_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "Paladone Gameboy Heat Changing Coffee Mug - Gift for Gamers, Nerds, Nintendo Mario Fans, Men, and Retro 90s Game Enthusiasts - 10 Ounces",
+            "og:url": "https://www.amazon.com/dp/B06WRVFRJV/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: Paladone Gameboy Heat Changing Coffee Mug - Gift for Gamers, Nerds, Nintendo Mario Fans, Men, and Retro 90s Game Enthusiasts - 10 Ounces : Home & Kitchen",
+            "og:description": "Amazon.com: Paladone Gameboy Heat Changing Coffee Mug - Gift for Gamers, Nerds, Nintendo Mario Fans, Men, and Retro 90s Game Enthusiasts - 10 Ounces : Home & Kitchen",
+            "encrypted-slate-token": "AnYxUup+GBMVB3QmK8mS3JFyFtdrt2niV7/Bwz+tpWbsg282FYAJ+gmpyQMZmqjO+tkkK7miFZA1ow7jorzhAoRHqA/q8i9rkKPey/4mP/DzIKz50yyPufZQubL5R+oJ7hdbT1QeupOvHJcTE5gBZyarWkIoAVi5QprmEGz/+3+QT6egb+B3xUH0viKgZTXYzZSxAs3M8gApFculanAHij3dhSzF6gUTzAXWtEQUfmyvX1b04AKXed69b1jOTvZClFxya1HFF6jGw6BBeNBK40y3nw=="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/81otEEAaurL._AC_UF894,1000_QL80_.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Top Koffing Koffee Coffee Mug or Tea Cup,Ceramic ... - Amazon.com",
+      "htmlTitle": "Top Koffing Koffee Coffee Mug or Tea Cup,Ceramic ... - Amazon.com",
+      "link": "https://www.amazon.com/Koffing-Koffee-Coffee-Ceramic-Material/dp/B07H2KWNDF",
+      "displayLink": "www.amazon.com",
+      "snippet": "Amazon.com: Top Koffing Koffee Coffee Mug or Tea Cup,Ceramic Material Mugs,White - 11oz : Home & Kitchen. ... Durable pokemon cup. Reviewed in the United States ...",
+      "htmlSnippet": "Amazon.com: Top Koffing Koffee Coffee Mug or <b>Tea Cup</b>,Ceramic Material Mugs,White - 11oz : Home &amp; Kitchen. ... Durable <b>pokemon</b> cup. Reviewed in the United States&nbsp;...",
+      "formattedUrl": "https://www.amazon.com/Koffing-Koffee-Coffee.../dp/B07H2KWNDF",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/Koffing-Koffee-Coffee.../<b>dp</b>/B07H2KWNDF",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSxLI4IBH0sHFvAu2zb8AQM7hoEKytJpgcQHaxXroN3gM99PAE9FuOnTw&s",
+            "width": "244",
+            "height": "206"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/31YE4D9E0%2BL._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFOURANDHALF%2cBottomLeft%2c360%2c-6_SR600%2c315_ZA76%2c445%2c290%2c400%2c400%2cAmazonEmberBold%2c12%2c4%2c0%2c0%2c5_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "Top Koffing Koffee Coffee Mug or Tea Cup,Ceramic Material Mugs,White - 11oz",
+            "og:url": "https://www.amazon.com/dp/B07H2KWNDF/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: Top Koffing Koffee Coffee Mug or Tea Cup,Ceramic Material Mugs,White - 11oz : Home & Kitchen",
+            "og:description": "Coffee Mug",
+            "encrypted-slate-token": "AnYxAP/WwepyH5mQvvu5Vhfe8RX93vusqvaGIzcaTn3XNX5Y5aJ3oz/mZV7eqB1thFrhI0ILNbOkmafmLm5IePh6m30IFeYlTSCFjfyujfgtFQTwYlaxGMUUOWXVV1Qnpl4/fmHqKQ+94cfowvmOAvDwBQCPu+qTQ7VDHRBc7LTZGbffHk2JAmoNcQ4+cFmeYYcPrViTSf8P6ZDzcAGcuFQBnH07mDLWRppURjSKOU7qfyF+YbgNH5TyfWFl90Kq0lz9SnvBLKdi3DcL/lG9G9mIqA=="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/31ir+3erUDL._AC_UF894,1000_QL80_.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Cute Tea Infuser by OTOTO - Loose Leaf Tea Steeper ... - Amazon.com",
+      "htmlTitle": "Cute Tea Infuser by OTOTO - Loose Leaf Tea Steeper ... - Amazon.com",
+      "link": "https://www.amazon.com/OTOTO-Steeper-Diffuser-Flavorful-Stainless/dp/B09FF6P7BL",
+      "displayLink": "www.amazon.com",
+      "snippet": "No Tea Spilt- Fancy a cup of tea? Tea Trap, your trusty loose tea steeper is a brewing master! Made by the OTOTO Studio, this friendly little tea diffuser ...",
+      "htmlSnippet": "No <b>Tea</b> Spilt- Fancy a <b>cup</b> of <b>tea</b>? <b>Tea</b> Trap, your trusty loose <b>tea</b> steeper is a brewing master! Made by the OTOTO Studio, this friendly little <b>tea</b> diffuser&nbsp;...",
+      "formattedUrl": "https://www.amazon.com/OTOTO-Steeper-Diffuser.../dp/B09FF6P7BL",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/OTOTO-Steeper-Diffuser.../<b>dp</b>/B09FF6P7BL",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU6R6jzDh6pIK-TdxrT_Kqq5NDZerSLe5XngzBXHoBxBrz3J1tqUgMpdc_&s",
+            "width": "254",
+            "height": "198"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/41oGPC0w7ML._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFOURANDHALF%2cBottomLeft%2c360%2c-6_SR600%2c315_ZA386%2c445%2c290%2c400%2c400%2cAmazonEmberBold%2c12%2c4%2c0%2c0%2c5_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "Cute Tea Infuser by OTOTO - Loose Leaf Tea Steeper, Tea Accessories, Tea Diffusers, Tea Infuser for Loose Leaf Tea, Tea Strainers, Cute Gifts, Tea Gift Set, Kitchen Gifts, Cooking Gadgets",
+            "og:url": "https://www.amazon.com/dp/B09FF6P7BL/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: Cute Tea Infuser by OTOTO - Loose Leaf Tea Steeper, Tea Accessories, Tea Diffusers, Tea Infuser for Loose Leaf Tea, Tea Strainers, Cute Gifts, Tea Gift Set, Kitchen Gifts, Cooking Gadgets : Home & Kitchen",
+            "og:description": "Tea Trap, the one-of-a-kind Venus Fly Trap tea steeper for loose tea. Tea Trap also makes a great housewarming gift for your loved ones! More than just a novelty item, Tea Trap's easy clean, and top-notch performance makes brewing effortless.Snag this monster brewer and enjoy some much needed 'tr...",
+            "encrypted-slate-token": "AnYxdGRjhmZRmLg6vyH3bWAUoHDFcrB5tz200zbVd341bqTzIdfD5oVnAPg3C2k+zmSAR0xpXfnYu96O5eXq+txBtSViBkxYvgOAEhoWAoeXQLgQqoiD+SIizBEF44b62Rh16TmUZoM5XlqEgT/4jZfBjTPaX9qOQrT+GmaoBqFKBsDJHXTeuhRyEw5eoEwcoYXCRqDhINQ6C4ojW42ad409i3aoKk57vbOBdkU5vDIftp9da4c5QlH/xqZcCFyETjh9MZM+i2ATmooaqp+wQPdUDw=="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/61D65HEdzBL._AC_UF350,350_QL80_DpWeblab_.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Pokemon Mini Tea Cup Time Pikachu Figure Sun ... - Amazon.com",
+      "htmlTitle": "Pokemon Mini Tea Cup Time Pikachu Figure Sun ... - Amazon.com",
+      "link": "https://www.amazon.com/Pokemon-Pikachu-Figure-Mascot-Gashapon/dp/B078G232B1",
+      "displayLink": "www.amazon.com",
+      "snippet": "Amazon.com: Pokemon Mini Tea Cup Time Pikachu Figure Sun Moon Mascot Gashapon Part 3 Anime : Toys & Games.",
+      "htmlSnippet": "Amazon.com: <b>Pokemon</b> Mini <b>Tea Cup</b> Time <b>Pikachu</b> Figure Sun Moon Mascot Gashapon Part 3 <b>Anime</b> : Toys &amp; Games.",
+      "cacheId": "Fbg2XhlmXS0J",
+      "formattedUrl": "https://www.amazon.com/Pokemon-Pikachu-Figure.../dp/B078G232B1",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/<b>Pokemon</b>-Pikachu-Figure.../<b>dp</b>/B078G232B1",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjove6GFVCItzlBeP3CT5l6x6ycisJudiYA5gD6MPsgNqQua2idZ9JE4H4&s",
+            "width": "237",
+            "height": "213"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/41IEVGcVoVL._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFIVE%2cBottomLeft%2c360%2c-6_SR600%2c315_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "Pokemon Mini Tea Cup Time Pikachu Figure Sun Moon Mascot Gashapon Part 3 Anime",
+            "og:url": "https://www.amazon.com/dp/B078G232B1/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: Pokemon Mini Tea Cup Time Pikachu Figure Sun Moon Mascot Gashapon Part 3 Anime : Toys & Games",
+            "og:description": "Pokemon Sun & Moon Mascot Figure Toy",
+            "encrypted-slate-token": "AnYxZPDtJFoEb+ifacXZUCVy7rRdna7Emuq+2ajmEPhN/UQdVOIzk+f25UkEd7HJ8sutqq90P4zwcx2Xz0Lb11ODF8ErcZYITJPlx0++Kwqlt9jEBpNMzShwDMUax3TO+kmC+BVy8jicUylpkAUu5pystxUNKLP/I3gn2sY7xFy5KoSAir3oc36imL57CF0GzECAs4xnprJbTppxh38P8G5vzAsvosDqHjRVAPvIJt9OI5rCU8O1CLic4pjaOtQ2U6D7J9zTCz5h03vfHge1rgHKqQ=="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/41IEVGcVoVL._AC_UF894,1000_QL80_.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Ultra PRO - Team Bags Resealable Sleeves (100 ct ... - Amazon.com",
+      "htmlTitle": "Ultra PRO - Team Bags Resealable Sleeves (100 ct ... - Amazon.com",
+      "link": "https://www.amazon.com/Ultra-Pro-Poly-Team-Bags/dp/B00095NR1K",
+      "displayLink": "www.amazon.com",
+      "snippet": "Manufacturer, \u200eUltra PRO International ; Part Number, \u200e81130 ; Model Year, \u200e2018 ; Size, \u200eTeam Set Size ; Sport Type, \u200eHockey.",
+      "htmlSnippet": "Manufacturer, \u200eUltra PRO International ; Part Number, \u200e81130 ; Model Year, \u200e2018 ; Size, \u200e<b>Team Set</b> Size ; Sport Type, \u200eHockey.",
+      "cacheId": "c03SYlJg2WwJ",
+      "formattedUrl": "https://www.amazon.com/Ultra-Pro-Poly-Team-Bags/dp/B00095NR1K",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/Ultra-Pro-Poly-<b>Tea</b>m-Bags/<b>dp</b>/B00095NR1K",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk2b6z0ClJLe6FAIk77KYHpdPyYrV2AVBcC-3BH60r8KRS-1VWeG_XS-ay&s",
+            "width": "199",
+            "height": "253"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/31Nz3JM1R6L._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFIVE%2cBottomLeft%2c360%2c-6_SR600%2c315_ZA454%2c445%2c290%2c400%2c400%2cAmazonEmberBold%2c12%2c4%2c0%2c0%2c5_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "Ultra PRO - Team Bags Resealable Sleeves (100 ct.) - Protect Your Gaming Cards, Sports Cards, and Collectible Cards, Features Resealable Edge for Easy Access and Switching Cards Out",
+            "og:url": "https://www.amazon.com/dp/B00095NR1K/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: Ultra PRO - Team Bags Resealable Sleeves (100 ct.) - Protect Your Gaming Cards, Sports Cards, and Collectible Cards, Features Resealable Edge for Easy Access and Switching Cards Out : Toys & Games",
+            "og:description": "Ultra Pro Soft re-sealable team bags. For multiple card team sets. These are Ultra Pro's top of the line poly team bags. These hold all standard cards.",
+            "encrypted-slate-token": "AnYxiCCq6v8JkLd+1jKBTnyueEx3835HLjlUAPHA5KbBr1VbQcpCimRoUV3fkzW76G/IZKIWLWGA9/0uXuZ7FJ6J+Iqo5wgzAYL6tDQsaTuT41BpyBmCOmCz3smGsnHE/pjpq0Ixr8mVKEIqKH1dUCviemyYnQLRihq2B533JNp3jYp+cyDXvyPiLNAPqkPqAqJyiWZJWugt4FBZ3Mydz92vZyFaJQSOUNWuOXHS0j6RwvwKmMiv18SJgxMDfl1Jpy3Fz5Xnta2a3+ho7jHWgjyxpw=="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/510VmWZtcML._AC_UF1000,1000_QL80_.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "LEGO Ideas Tree House 21318, Model Construction ... - Amazon.com",
+      "htmlTitle": "LEGO Ideas Tree House 21318, Model Construction ... - Amazon.com",
+      "link": "https://www.amazon.com/LEGO-6278925-Ideas-2019-3/dp/B07PX3WW5N",
+      "displayLink": "www.amazon.com",
+      "snippet": "Buy LEGO Ideas Tree House 21318, Model Construction Set for 16 Plus Year Olds with 3 Cabins, Interchangeable Leaves, Minifigures and a Bird Figure: Building ...",
+      "htmlSnippet": "Buy LEGO Ideas Tree House 21318, Model Construction <b>Set</b> for 16 Plus Year Olds with 3 Cabins, Interchangeable Leaves, Minifigures and a Bird Figure: Building&nbsp;...",
+      "formattedUrl": "https://www.amazon.com/LEGO-6278925-Ideas...3/dp/B07PX3WW5N",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/LEGO-6278925-Ideas...3/<b>dp</b>/B07PX3WW5N",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9qDk9h7VqC5XKCFMAHGQvCHoU7yOdNndHrNBsi7rWEIhfxEYrCwsm147R&s",
+            "width": "259",
+            "height": "194"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/51EOZbMz5AL._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFIVE%2cBottomLeft%2c360%2c-6_SR600%2c315_ZA3%252C731%2c445%2c290%2c400%2c400%2cAmazonEmberBold%2c12%2c4%2c0%2c0%2c5_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "LEGO Ideas Tree House 21318, Model Construction Set for 16 Plus Year Olds with 3 Cabins, Interchangeable Leaves, Minifigures and a Bird Figure",
+            "og:url": "https://www.amazon.com/dp/B07PX3WW5N/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: LEGO Ideas Tree House 21318, Model Construction Set for 16 Plus Year Olds with 3 Cabins, Interchangeable Leaves, Minifigures and a Bird Figure : Toys & Games",
+            "og:description": "The LEGO Ideas 21318 Tree House is a meticulously detailed 3036-piece building set for playing or exhibiting. This complex model is for experienced LEGO builders and will make the whole family happy. It includes a landscape base and a LEGO treehouse with three rooms: a master bedroom, a bathroom ...",
+            "encrypted-slate-token": "AnYxiJFPzmoJ9nwaNsH7ZSkBO/1MyJfVgv+bBZA2kDiDLE6rxO2MrlHEK6lI6PG6Ih8l+DGUyP1WbCTNM7pin11ykM7GRauNjjMfyUV2LZ6Glzio1zg+1Y+IDkrHMS2ANHIz+TA2+5NkyH+7VDn9XfN1YpBCgU5cbTZ7BgnDJyQM6PEPwYszX1bRxdwayAanKm4+bN0jvjk8M5Th7+4Iu/mJSeMewyRpn6jXKEK1JL/uZqPhYY5Q55b4g7bRB1vyEegW5IMKQGp0DMMsIYVV6srPXg=="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/71uOjr6dsUL._AC_UF894,1000_QL80_DpWeblab_.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Funko Pop! Holiday Calendar - Pokemon, 24 Pocket ... - Amazon.com",
+      "htmlTitle": "Funko Pop! Holiday Calendar - Pokemon, 24 Pocket ... - Amazon.com",
+      "link": "https://www.amazon.com/Funko-Pop-Advent-Calendar-Charming/dp/B0BLT7XM57",
+      "displayLink": "www.amazon.com",
+      "snippet": "What do customers buy after viewing this item? Most purchased | Lowest Pricein this set of products.",
+      "htmlSnippet": "What do customers buy after viewing this item? Most purchased | Lowest Pricein this <b>set</b> of products.",
+      "formattedUrl": "https://www.amazon.com/Funko-Pop-Advent-Calendar.../dp/B0BLT7XM5...",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/Funko-Pop-Advent-Calendar.../<b>dp</b>/B0BLT7XM5...",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR75qskcAFaREvfNPerbNUvTCVlbN4ZYNpzXsLWXFxUvo5qQyxyB1iwkz9D&s",
+            "width": "261",
+            "height": "193"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/5108QT1kubL._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFOURANDHALF%2cBottomLeft%2c360%2c-6_SR600%2c315_ZA1%252C361%2c445%2c290%2c400%2c400%2cAmazonEmberBold%2c12%2c4%2c0%2c0%2c5_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "Funko Pop! Holiday Calendar - Pokemon, 24 Pocket Pop! Vinyl Figures",
+            "og:url": "https://www.amazon.com/dp/B0BLT7XM57/ref=tsm_1_fb_lk",
+            "title": "Amazon.com: Funko Pop! Holiday Calendar - Pokemon, 24 Pocket Pop! Vinyl Figures : Funko: Toys & Games",
+            "og:description": "Your dream of becoming a Trainer is not out of reach! Countdown to your favorite holiday, or any special occasion, with the Pokémon 24 Day Advent Calendar! Open the tiny doors to reveal 24 unique Funko Pocket Pops! featuring some of your most beloved Pokémon! Which will you catch next for your co...",
+            "encrypted-slate-token": "AnYxPftaa5m9RoPxL1Lc5FOki5LZu9850qrMYep7OP/lgXmxCcaRepEKoAYRggix7OPS3v1upOkHXxfbqr2+lUMVhMdt+XhWsJYekEaoa2LdJgy9VBrufUwksPH3X7c5aj+Pf6Lhu+KFJwPXgx/HfTwSzaoMG2HKpzHeCIgNOvnw22WmbZi3G3ZR2C5oDJoZXjorJZSVdcyAMgWoJ2kv7RcZqj+M/o2B1x3+AZofcUGoNYh2XaQwW5kLwB+FC29x+LccxrUwZonEuG4CpfuyEXkEbhw="
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/71qUUsgEKLL._AC_UF894,1000_QL80_.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Pokemons Cartoon, Mug, White Glossy Cup: Coffee ... - Amazon.com",
+      "htmlTitle": "Pokemons Cartoon, Mug, White Glossy Cup: Coffee ... - Amazon.com",
+      "link": "https://www.amazon.com/Pokemons-Cartoon-Mug-White-Glossy/dp/B0BT19YJZF",
+      "displayLink": "www.amazon.com",
+      "snippet": "Pokemons Cartoon, Mug, White Glossy Cup. +. Singer Coffee Mug and Tea Cup for Womens and Girls, Gifts for Singer Merchandise (. +. 20 Oz Hello Kawaii cat cute ...",
+      "htmlSnippet": "<b>Pokemons</b> Cartoon, Mug, White Glossy Cup. +. Singer Coffee Mug and <b>Tea Cup</b> for Womens and Girls, Gifts for Singer Merchandise (. +. 20 Oz Hello Kawaii cat cute&nbsp;...",
+      "formattedUrl": "https://www.amazon.com/Pokemons-Cartoon-Mug.../dp/B0BT19YJZF",
+      "htmlFormattedUrl": "https://www.<b>amazon.com</b>/<b>Pokemon</b>s-Cartoon-Mug.../<b>dp</b>/B0BT19YJZF",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdFaW1mbuUiO9CvEgLmPlmvNSMMCLyHDMzaeJL7BZwZP28CB8bRfg1kaTY&s",
+            "width": "235",
+            "height": "214"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://m.media-amazon.com/images/I/51ibHMm2qEL._SR600%2c315_PIWhiteStrip%2cBottomLeft%2c0%2c35_PIStarRatingFOURANDHALF%2cBottomLeft%2c360%2c-6_SR600%2c315_ZA6%2c445%2c290%2c400%2c400%2cAmazonEmberBold%2c12%2c4%2c0%2c0%2c5_SCLZZZZZZZ_FMpng_BG255%2c255%2c255.jpg",
+            "theme-color": "#131921",
+            "viewport": "width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no",
+            "og:title": "Pokemons Cartoon, Mug, White Glossy Cup",
+            "og:url": "https://www.amazon.com/dp/B0BT19YJZF/ref=tsm_1_fb_lk",
+            "title": "Amazon.com | Pokemons Cartoon, Mug, White Glossy Cup: Coffee Cups & Mugs",
+            "og:description": "White Glossy Mug. Premium Quality Ceramic Composite. Easy Comfort Grip Curved Handle. Capacity 11 Oz / 325 Ml. Our designs are permanently sublimated onto our mugs, No vinyl or stickers are used.We solve your needs for a unique gift.To achieve this, we follow the latest trends and provide you wit...",
+            "encrypted-slate-token": "AnYxaZ7uRq0hAcZYo63zokLpTYhVRBysH5C4Kx689Ws8kZT4FRy0zGUFNZL+Fk+AZd4iQ6iJO6oynO9AJTgVeRAwmZJdcqVeYAURin777VVvtnCcC2ktJYD15GAPmx8L/zLsTPTqETh3o2czCL9S4LyhFe9uNMp/FhSZnFq2+mFcay8zRjdQd3jeHkfYt7Ax2el5NUkmf75/BLD5N2ognblbv3yUGv54GDQu3CKqGj6xu8atrsDOnPMOMVxRRTmho+owHodUTGQBPB3mfFW1i1Qf"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://m.media-amazon.com/images/I/51ibHMm2qEL._AC_UF894,1000_QL80_DpWeblab_.jpg"
+          }
+        ]
+      }
+    }
+  ]
+}

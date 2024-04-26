@@ -2,7 +2,7 @@ import {
   encodeObject,
   getTimeDifference,
   timeoutPromise,
-} from "../utilities/helpers.mjs";
+} from "../../utilities/helpers.mjs";
 
 export default async function rainforestProductSearch(args) {
   const RETRIEVE_DELAY_MS = 50;

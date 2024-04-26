@@ -1,15 +1,20 @@
+import { dummyRecRes } from "../../constants/dummyRecRes";
 import { formatErrorResponse, formatResponse } from "../formatResponse.mjs";
 import googleProgProductSearch from "../logic/googleProgProductSearch.mjs";
 import oaiRecommend from "../logic/oaiRecommend.mjs";
 
 export default async function recommendHandler(bodyParams) {
   const { formResponse, oldIdeaList } = bodyParams;
+
   // Validate inputs
+  // TODO: Validate old idea list and better validation overall
   if (!validateFormResponse(formResponse)) {
     return formatErrorResponse("Invalid form response", 400);
   }
 
-  // TODO: Validate old idea list and better validation overall
+  if (bodyParams.isDummy) {
+    return formatResponse(dummyRecRes);
+  }
 
   const MAX_REC_LENGTH = 10;
   const recRes = await oaiRecommend({

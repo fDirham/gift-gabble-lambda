@@ -1,9 +1,14 @@
+import { dummyProductSearchRes } from "../../constants/dummyProductSearchRes";
 import { formatResponse } from "../formatResponse.mjs";
 import googleProgProductSearch from "../logic/googleProgProductSearch.mjs";
 
 export default async function productSearchHandler(bodyParams) {
   let { inList } = bodyParams;
   // TODO: Validate inputs
+
+  if (bodyParams.isDummy) {
+    return formatResponse(dummyProductSearchRes);
+  }
 
   const MAX_PS_IN_LENGTH = 6;
   if (inList.length > MAX_PS_IN_LENGTH) {

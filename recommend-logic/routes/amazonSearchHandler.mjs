@@ -1,10 +1,15 @@
+import { dummyAmazonSearchRes } from "../../constants/dummyAmazonSearchRes";
 import { formatResponse } from "../formatResponse.mjs";
 import rainforestAmazonSearch from "../logic/rainforestAmazonSearch.mjs";
 
 export default async function amazonSearchHandler(bodyParams) {
+  const { q } = bodyParams;
+
   // TODO: Validate
 
-  let { q } = bodyParams;
+  if (bodyParams.isDummy) {
+    return formatResponse(dummyAmazonSearchRes);
+  }
 
   const asRes = await rainforestAmazonSearch({
     inList: [q],

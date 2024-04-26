@@ -1,7 +1,8 @@
 import express from "express";
 import "dotenv/config";
-import recommendLogic from "../recommend-logic/index.mjs";
 import cors from "cors";
+import mainAPI from "../recommend-logic/index.mjs";
+import { getTimeDifference } from "../utilities/helpers.mjs";
 
 const app = express();
 app.use(express.json());
@@ -16,12 +17,17 @@ app.listen(PORT, () => {
 app.post("/", async (request, response) => {
   try {
     console.log("Starting recommend", { body: request.body });
-    const res = await recommendLogic(request.body);
+    const startDate = new Date();
+
+    const res = await mainAPI(request.body);
 
     response.status(res.statusCode);
     response.send(res.body);
 
-    console.log(res);
+    const endDate = new Date();
+    const timeDiff = getTimeDifference(startDate, endDate);
+
+    console.log("Finished", timeDiff + " seconds");
   } catch (err) {
     console.log({ error: err });
     response.status(500);

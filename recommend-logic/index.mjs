@@ -3,6 +3,9 @@ import getAmazonSearchLinks from "./getAmazonSearchLinks.mjs";
 import getImages from "./getImages.mjs";
 import getRecList from "./getRecList.mjs";
 import validateInputs from "./validateInputs.mjs";
+import { googleProgProductSearch } from "./googleProgProductSearch.mjs";
+import oxylabsProductSearch from "./oxylabsProductSearch.mjs";
+import rainforestProductSearch from "./rainforestProductSearch.mjs";
 
 export default async function recommendLogic(bodyParams) {
   const validInputs = validateInputs(bodyParams);
@@ -65,7 +68,6 @@ export default async function recommendLogic(bodyParams) {
       statusCode: 200,
     };
   }
-
   if (actionType == ACTION_TYPE_DICT.IMG) {
     const { retrieveImageList } = bodyParams;
     const NUM_IMAGES_PER_REC = 5;
@@ -87,6 +89,75 @@ export default async function recommendLogic(bodyParams) {
     if (showDebug) {
       bodyToReturn.duration = {
         getImagesDuration: imgRes.timeDiff,
+      };
+    }
+    return { body: bodyToReturn, statusCode: 200 };
+  }
+
+  if (actionType == ACTION_TYPE_DICT.PS_OXYLABS) {
+    const { inList } = bodyParams;
+    const searchRes = await oxylabsProductSearch({
+      retrieveList: inList,
+      isDummy: dummyConfig.all || dummyConfig.getAmazonSearch,
+    });
+    if (searchRes.isError) {
+      return { body: "Failed to search", statusCode: 500 };
+    }
+    const productDataDict = searchRes.productDataDict;
+
+    const bodyToReturn = {
+      productDataDict,
+    };
+
+    if (showDebug) {
+      bodyToReturn.duration = {
+        oxylabsProductSearch: searchRes.timeDiff,
+      };
+    }
+    return { body: bodyToReturn, statusCode: 200 };
+  }
+
+  if (actionType == ACTION_TYPE_DICT.PS_RAINFOREST) {
+    const { inList } = bodyParams;
+    const searchRes = await rainforestProductSearch({
+      retrieveList: inList,
+      isDummy: dummyConfig.all || dummyConfig.rainforestSearch,
+    });
+    if (searchRes.isError) {
+      return { body: "Failed to search", statusCode: 500 };
+    }
+    const productDataDict = searchRes.productDataDict;
+
+    const bodyToReturn = {
+      productDataDict,
+    };
+
+    if (showDebug) {
+      bodyToReturn.duration = {
+        rainforestProductSearch: searchRes.timeDiff,
+      };
+    }
+    return { body: bodyToReturn, statusCode: 200 };
+  }
+
+  if (actionType == ACTION_TYPE_DICT.PS_GOOGLE_PROG) {
+    const { inList } = bodyParams;
+    const searchRes = await googleProgProductSearch({
+      inList,
+      isDummy: dummyConfig.all || dummyConfig.rainforestSearch,
+    });
+    if (searchRes.isError) {
+      return { body: "Failed to search", statusCode: 500 };
+    }
+    const productDataDict = searchRes.productDataDict;
+
+    const bodyToReturn = {
+      productDataDict,
+    };
+
+    if (showDebug) {
+      bodyToReturn.duration = {
+        googleProgProductSearch: searchRes.timeDiff,
       };
     }
     return { body: bodyToReturn, statusCode: 200 };

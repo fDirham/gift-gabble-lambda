@@ -3,7 +3,7 @@ import { getTimeDifference, timeoutPromise } from "../utilities/helpers.mjs";
 export default async function getImages(args) {
   const RETRIEVE_DELAY_MS = 500;
 
-  const { retrieveList, isDummy, numImagesPerRec } = args;
+  const { isDummy, numImagesPerRec } = args;
   if (isDummy) {
     // TODO
     return { isError: false, imageDict: {}, timeDiff: 0 };
@@ -12,6 +12,12 @@ export default async function getImages(args) {
   const startDate = new Date();
 
   const toReturn = {};
+
+  let { retrieveList } = args;
+  const MAX_RETRIEVE_SIZE = 6;
+  if (retrieveList.length > MAX_RETRIEVE_SIZE) {
+    retrieveList = retrieveList.slice(0, MAX_RETRIEVE_SIZE);
+  }
 
   const imagesList = await Promise.all(
     retrieveList.map(async (kw, kwIdx) => {
@@ -23,12 +29,6 @@ export default async function getImages(args) {
           domain: "com",
           query: kw + " site:amazon.com",
           parse: true,
-          context: [
-            {
-              key: "tbm",
-              value: "isch",
-            },
-          ],
         };
 
         const auth = {

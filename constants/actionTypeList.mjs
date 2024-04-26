@@ -1,6 +1,6 @@
 const ACTION_TYPE_DICT = {
   REC: "REC",
-  RETRIEVE_IMAGE: "RETRIEVE_IMAGE",
+  IMG: "IMG",
 };
 
 export default ACTION_TYPE_DICT;

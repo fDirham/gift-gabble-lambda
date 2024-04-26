@@ -3,7 +3,7 @@ import ACTION_TYPE_DICT from "../constants/actionTypeList.mjs";
 export default function validateInputs(bodyParams) {
   const MAX_USER_INPUT_LENGTH = 205;
 
-  const { formResponse, actionType, retrieveImageForRecList } = bodyParams;
+  const { formResponse, actionType, retrieveImageList } = bodyParams;
 
   // Check action type
   if (!actionType || !ACTION_TYPE_DICT[actionType]) {
@@ -14,8 +14,8 @@ export default function validateInputs(bodyParams) {
     if (!formResponse) return false;
   }
 
-  if (actionType == ACTION_TYPE_DICT.RETRIEVE_IMAGE) {
-    if (!retrieveImageForRecList) return false;
+  if (actionType == ACTION_TYPE_DICT.IMG) {
+    if (!retrieveImageList) return false;
   }
 
   // Check form response

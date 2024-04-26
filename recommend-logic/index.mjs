@@ -22,7 +22,7 @@ export default async function recommendLogic(bodyParams) {
       formResponse: bodyParams.formResponse,
       isDummy: dummyConfig.all || dummyConfig.getRecList,
       size: REC_SIZE,
-      oldResponses: bodyParams.oldResponses || null,
+      oldIdeaList: bodyParams.oldIdeaList || null,
     };
     const recRes = await getRecList(recListArgs);
     if (recRes.isError) {
@@ -41,13 +41,13 @@ export default async function recommendLogic(bodyParams) {
     // Get final list to return
     const finalRecList = recList.map((rec) => {
       return {
-        rec,
+        idea: rec,
         amazonSearchLink: amazonSearchLinkDict[rec] || null,
       };
     });
 
     const bodyToReturn = {
-      recList: finalRecList,
+      ideaList: finalRecList,
     };
 
     if (showDebug) {
@@ -66,11 +66,11 @@ export default async function recommendLogic(bodyParams) {
     };
   }
 
-  if (actionType == ACTION_TYPE_DICT.RETRIEVE_IMAGE) {
-    const { retrieveImageForRecList } = bodyParams;
+  if (actionType == ACTION_TYPE_DICT.IMG) {
+    const { retrieveImageList } = bodyParams;
     const NUM_IMAGES_PER_REC = 5;
     const getImagesArgs = {
-      retrieveList: retrieveImageForRecList,
+      retrieveList: retrieveImageList,
       isDummy: dummyConfig.all || dummyConfig.getImages,
       numImagesPerRec: NUM_IMAGES_PER_REC,
     };

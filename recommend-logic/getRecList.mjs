@@ -4,7 +4,7 @@ import { getTimeDifference } from "../utilities/helpers.mjs";
 
 export default async function getRecList(args) {
   // Some params
-  const { formResponse, isDummy, size, oldResponses } = args;
+  const { formResponse, isDummy, size, oldIdeaList } = args;
   if (isDummy) return { isError: false, recList: DUMMY_REC_LIST };
 
   const startDate = new Date();
@@ -15,7 +15,6 @@ export default async function getRecList(args) {
   let desc = formResponse["desc"];
   let budget = formResponse["budget"];
   let giftNotes = formResponse["giftNotes"];
-  let pronouns = formResponse["pronouns"];
 
   const openai = new OpenAI();
 
@@ -108,20 +107,20 @@ gift_recs: [
       },
     ];
 
-    if (oldResponses) {
-      const OLD_RESPONSES_WINDOW_SIZE = 20;
-      let fOldResponses = oldResponses;
-      if (fOldResponses.length > OLD_RESPONSES_WINDOW_SIZE) {
-        const diff = fOldResponses.length - OLD_RESPONSES_WINDOW_SIZE;
-        fOldResponses = fOldResponses.slice(diff);
+    if (oldIdeaList) {
+      const OLD_IDEA_LIST_WINDOW_SIZE = 20;
+      let fOldIdeaList = oldIdeaList;
+      if (fOldIdeaList.length > OLD_IDEA_LIST_WINDOW_SIZE) {
+        const diff = fOldIdeaList.length - OLD_IDEA_LIST_WINDOW_SIZE;
+        fOldIdeaList = fOldIdeaList.slice(diff);
       }
       messagesToChat.push({
         role: "assistant",
-        content: JSON.stringify(oldResponses, null, 3),
+        content: JSON.stringify(oldIdeaList, null, 3),
       });
       messagesToChat.push({
         role: "user",
-        content: "Can you give me new reccomendations?",
+        content: "Can you give me new recommendations?",
       });
     }
 

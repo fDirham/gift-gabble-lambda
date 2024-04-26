@@ -4,25 +4,20 @@ import {
   timeoutPromise,
 } from "../../utilities/helpers.mjs";
 
-export default async function rainforestProductSearch(args) {
+export default async function rainforestAmazonSearch(args) {
   const RETRIEVE_DELAY_MS = 50;
 
   const { isDummy } = args;
   if (isDummy) {
     // TODO
-    return { isError: false, dataDict: {}, timeDiff: 0 };
+    return { isError: false, searchDataDict: {}, timeDiff: 0 };
   }
 
   const startDate = new Date();
 
-  let { retrieveList } = args;
-  const MAX_RETRIEVE_SIZE = 6;
-  if (retrieveList.length > MAX_RETRIEVE_SIZE) {
-    retrieveList = retrieveList.slice(0, MAX_RETRIEVE_SIZE);
-  }
-
-  const productDataList = await Promise.all(
-    retrieveList.map(async (kw, kwIdx) => {
+  const { inList } = args;
+  const searchDataList = await Promise.all(
+    inList.map(async (kw, kwIdx) => {
       try {
         await timeoutPromise(kwIdx * RETRIEVE_DELAY_MS);
 
@@ -89,7 +84,7 @@ export default async function rainforestProductSearch(args) {
   );
 
   const toReturn = {};
-  productDataList.forEach((obj) => {
+  searchDataList.forEach((obj) => {
     if (!obj.isError) {
       toReturn[obj.kw] = obj.data;
     }
@@ -98,5 +93,5 @@ export default async function rainforestProductSearch(args) {
   const endDate = new Date();
   const timeDiff = getTimeDifference(startDate, endDate);
 
-  return { isError: false, productDataDict: toReturn, timeDiff };
+  return { isError: false, searchDataDict: toReturn, timeDiff };
 }

@@ -23,14 +23,16 @@ export default async function recommendHandler(bodyParams) {
     return formatErrorResponse(recRes.errorObj, recRes.statusCode);
   }
 
-  let { ideaList } = recRes;
+  const { ideaList } = recRes;
+
+  let inList = ideaList;
   const MAX_PS_IN_LENGTH = 6;
-  if (ideaList.length > MAX_PS_IN_LENGTH) {
-    ideaList = ideaList.slice(0, MAX_PS_IN_LENGTH);
+  if (inList.length > MAX_PS_IN_LENGTH) {
+    inList = inList.slice(0, MAX_PS_IN_LENGTH);
   }
 
   const psRes = await googleProgProductSearch({
-    inList: ideaList,
+    inList,
     isDummy: false, // TODO
   });
 
@@ -40,12 +42,12 @@ export default async function recommendHandler(bodyParams) {
 
   const { productDataDict } = psRes;
 
-  ideaList = ideaList.map((idea) => {
+  const toReturn = ideaList.map((idea) => {
     if (!productDataDict[idea]) return { idea };
     return { idea, productList: productDataDict[idea] };
   });
 
-  return formatResponse(ideaList);
+  return formatResponse(toReturn);
 }
 
 function validateFormResponse(formResponse) {

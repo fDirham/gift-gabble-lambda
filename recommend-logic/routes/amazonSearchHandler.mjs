@@ -1,4 +1,4 @@
-import { dummyAmazonSearchRes } from "../../constants/dummyAmazonSearchRes";
+import { dummyAmazonSearchRes } from "../../constants/dummyAmazonSearchRes.mjs";
 import { formatResponse } from "../formatResponse.mjs";
 import rainforestAmazonSearch from "../logic/rainforestAmazonSearch.mjs";
 

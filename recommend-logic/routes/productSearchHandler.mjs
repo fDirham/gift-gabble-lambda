@@ -1,4 +1,4 @@
-import { dummyProductSearchRes } from "../../constants/dummyProductSearchRes";
+import { dummyProductSearchRes } from "../../constants/dummyProductSearchRes.mjs";
 import { formatResponse } from "../formatResponse.mjs";
 import googleProgProductSearch from "../logic/googleProgProductSearch.mjs";
 

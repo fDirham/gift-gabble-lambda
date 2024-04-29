@@ -1,4 +1,4 @@
-import { dummyRecRes } from "../../constants/dummyRecRes";
+import { dummyRecRes } from "../../constants/dummyRecRes.mjs";
 import { formatErrorResponse, formatResponse } from "../formatResponse.mjs";
 import googleProgProductSearch from "../logic/googleProgProductSearch.mjs";
 import oaiRecommend from "../logic/oaiRecommend.mjs";

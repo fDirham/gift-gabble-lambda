@@ -1,6 +1,6 @@
 import { dummyRecRes } from "../../constants/dummyRecRes.mjs";
 import { formatErrorResponse, formatResponse } from "../formatResponse.mjs";
-import googleProgProductSearch from "../logic/googleProgProductSearch.mjs";
+import googleProgImageSearch from "../logic/googleProgImageSearch.mjs";
 import oaiRecommend from "../logic/oaiRecommend.mjs";
 
 export default async function recommendHandler(bodyParams) {
@@ -36,20 +36,20 @@ export default async function recommendHandler(bodyParams) {
     inList = inList.slice(0, MAX_PS_IN_LENGTH);
   }
 
-  const psRes = await googleProgProductSearch({
+  const isRes = await googleProgImageSearch({
     inList,
     isDummy: false, // TODO
   });
 
-  if (psRes.isError) {
+  if (isRes.isError) {
     // TODO
   }
 
-  const { productDataDict } = psRes;
+  const { imageDict } = isRes;
 
   const toReturn = ideaList.map((idea) => {
-    if (!productDataDict[idea]) return { idea };
-    return { idea, productList: productDataDict[idea] };
+    if (!imageDict[idea]) return { idea };
+    return { idea, imageList: imageDict[idea] };
   });
 
   return formatResponse(toReturn);

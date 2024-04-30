@@ -20,5 +20,5 @@ export default async function amazonSearchHandler(bodyParams) {
     //TODO
   }
 
-  return formatResponse(asRes.searchDataDict);
+  return formatResponse(asRes.searchDataDict[q]);
 }

@@ -48,14 +48,11 @@ export default async function rainforestAmazonSearch(args) {
         const resList = resObj.search_results;
 
         const productList = resList.map((curr) => {
-          let price = "";
           let priceNum = 0;
           try {
-            price = curr.price.symbol + curr.price.value;
             priceNum = parseFloat(curr.price.value);
           } catch {
-            price = undefined;
-            priceNum = undefined;
+            priceNum = null;
           }
 
           return {
@@ -65,8 +62,9 @@ export default async function rainforestAmazonSearch(args) {
             imageUrl: curr.image,
             rating: curr.rating,
             ratingsTotal: curr.ratings_total,
-            price,
             priceNum,
+            priceSymbol: curr.price.symbol || null,
+            priceStr: priceNum ? priceNum + "" : null,
             isPrime: curr.is_prime || false,
           };
         });

@@ -84,6 +84,15 @@ export default async function rainforestAmazonSearch(args) {
   const toReturn = {};
   searchDataList.forEach((obj) => {
     if (!obj.isError) {
+      const data = [];
+      const asinSet = new Set();
+      obj.data.forEach((product) => {
+        const asin = product.asin;
+        if (!asinSet.has(asin)) {
+          data.push(product);
+          asinSet.add(asin);
+        }
+      });
       toReturn[obj.kw] = obj.data;
     }
   });

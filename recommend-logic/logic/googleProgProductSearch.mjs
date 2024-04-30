@@ -43,14 +43,18 @@ export default async function googleProgProductSearch(args) {
               throw "Not DP";
             }
 
-            const { metatags } = pagemap;
+            const { metatags, cse_image } = pagemap;
             if (!metatags) {
               throw "No metatags";
             }
 
+            if (!cse_image) {
+              throw "No image";
+            }
+
             const metaEl = metatags[0];
 
-            const image = metaEl["og:image"];
+            const image = cse_image[0].src;
             const title = metaEl["og:title"];
 
             return { link, image, title };

@@ -1,6 +1,6 @@
 import { dummyRecRes } from "../../constants/dummyRecRes.mjs";
 import { formatErrorResponse, formatResponse } from "../formatResponse.mjs";
-import googleProgImageSearch from "../logic/googleProgImageSearch.mjs";
+import googleProgAmazonImageSearch from "../logic/googleProgAmazonImageSearch.mjs";
 import oaiRecommend from "../logic/oaiRecommend.mjs";
 
 export default async function recommendHandler(bodyParams) {
@@ -31,25 +31,29 @@ export default async function recommendHandler(bodyParams) {
   const { ideaList } = recRes;
 
   let inList = ideaList;
-  const MAX_PS_IN_LENGTH = 6;
+  const MAX_PS_IN_LENGTH = 10;
   if (inList.length > MAX_PS_IN_LENGTH) {
     inList = inList.slice(0, MAX_PS_IN_LENGTH);
   }
 
-  const isRes = await googleProgImageSearch({
+  const psRes = await googleProgAmazonImageSearch({
     inList,
     isDummy: false, // TODO
   });
 
-  if (isRes.isError) {
+  if (psRes.isError) {
     // TODO
   }
 
-  const { imageDict } = isRes;
+  const { productDataDict } = psRes;
 
-  const toReturn = ideaList.map((idea) => {
-    if (!imageDict[idea]) return { idea };
-    return { idea, imageList: imageDict[idea] };
+  const toReturn = [];
+  const MIN_PRODUCT_LIST_SIZE = 3;
+  ideaList.forEach((idea) => {
+    const productList = productDataDict[idea];
+    if (productList && productList.length >= MIN_PRODUCT_LIST_SIZE) {
+      toReturn.push({ idea, productList });
+    }
   });
 
   return formatResponse(toReturn);

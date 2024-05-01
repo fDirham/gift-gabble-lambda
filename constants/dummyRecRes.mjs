@@ -1,104 +1,509 @@
 export const dummyRecRes = [
   {
-    idea: "A Pikachu reusable water bottle",
-    imageList: [
-      "https://m.media-amazon.com/images/I/718Ogd8d1YL._AC_UF894,1000_QL80_.jpg",
-      "https://i5.walmartimages.com/seo/Pokemon-Reusable-Water-Bottle-Pikachu-Chespin-by-Zak_078f6bf2-5728-458e-b946-8d89dc818010.bd05553b63182585717afeab5ad79714.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-      "https://m.media-amazon.com/images/I/718Ogd8d1YL.jpg",
-      "https://i5.walmartimages.com/asr/01fa7d8e-2013-418a-a54b-ff65ea597ef3_2.bc242b496714abc74f57c2a31362af71.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-      "https://m.media-amazon.com/images/I/71tebUr-D+L.jpg",
-      "https://i5.walmartimages.com/asr/47dd8757-3af9-45e2-a52b-9ead159b04cb_1.674c51d77134c94b60e566641411d479.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-      "https://m.media-amazon.com/images/I/71yI3TpK2rL.jpg",
-      "https://previewsworld.com/SiteImage/MainImage/STL023135",
-      "https://m.media-amazon.com/images/I/71yI3TpK2rL._AC_UF894,1000_QL80_.jpg",
-      "https://hellodiscountstore.com/cdn/shop/products/medium_49d65295-05c4-41a8-a626-22088b0e7012.jpg?v=1659739475",
+    idea: "A feminist enamel pin",
+    productList: [
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/81IvfuJ8R9L._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Inbagi-Aesthetic-Feminism-Empowerment-Backpack/dp/B0CLNZLXH5&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Inbagi 20 Pcs Women Girl Power Enamel Pin Aesthetic ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61xzEOqt6BL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Real-Sic-Womens-Power-Enamel/dp/B07XG2HPQR&tag=fbdlabs-20",
+        title:
+          "Amazon.com: REAL SIC Women's Power Enamel Pin - Raised Feminist ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/51cqgNqbZ8L._AC_UY1000_DpWeblab_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/PinMart-Womans-Rights-Equality-Feminist/dp/B079NPZN9G&tag=fbdlabs-20",
+        title:
+          "Amazon.com: PinMart's Womans Rights Equality Feminist Enamel Lapel ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/510y-Y7WepL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Feminist-Enamel-Brooches-Badges-Jewelry/dp/B0BV22K5LK&tag=fbdlabs-20",
+        title:
+          'Amazon.com: Feminist Pink Badge Enamel Pins Brooches "IF HE PUTS ...',
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61zDHRv7o5L._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Charmart-Merciful-Feminist-Female-Feminism/dp/B07MDJ1GDZ&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Charmart Be Just Merciful and Brave Feminist Lapel Pin ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61P4QcLSxTL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Feminist-Activism-Clothing-Decoration-Christmas/dp/B0B5CY4P5T&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Women's Right Safe Enamel Pins Gift for Feminist ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/51oxS8yQWjL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/LATINDAY-Distress-Feminist-Brooches-Accessories/dp/B0B87JSKYJ&tag=fbdlabs-20",
+        title:
+          "Amazon.com: LATINDAY I Am No Damsel in Distress I Am A Dragon In A ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61VMmJ3P9EL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/KAWADU-Enamel-Feminist-Glittering-Friends/dp/B09W1XNWGG&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Girl Power Badge Red Metal Enamel Pin Feminist Badge ...",
+      },
     ],
   },
   {
-    idea: "Pokemon-themed notebook set",
-    imageList: [
-      "https://m.media-amazon.com/images/I/91tagoBj12L._AC_UF894,1000_QL80_.jpg",
-      "https://ae01.alicdn.com/kf/S622ba00cc9d24a389f56831107cbdb4ff.jpg_640x640Q90.jpg_.webp",
-      "https://m.media-amazon.com/images/I/91tagoBj12L.jpg",
-      "http://www.toynk.com/cdn/shop/products/IAD-709484POK-CA.jpg?v=1665489674",
-      "https://m.media-amazon.com/images/I/91WJOQXls0L._AC_UF350,350_QL80_.jpg",
-      "https://i5.walmartimages.com/seo/Innovative-Designs-Pokemon-Kids-Coloring-Art-and-Sticker-Set-30-Pcs-School-Craft-Supplies-with-Pencil-Case_aad013ab-3aa4-4f9e-862a-1ffc3264063a.51fa9b260e060f331092ce97c70619c5.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF",
-      "https://m.media-amazon.com/images/I/91ggurNVj+L.jpg",
-      "https://gettrend.com/cdn/shop/products/DIARY_2BALLPENSSETINDISPLAYBOXWPVCWINDOWSET-03-PK_6_800x.jpg?v=1677495911",
-      "https://m.media-amazon.com/images/I/91ggurNVj+L._AC_UF894,1000_QL80_.jpg",
-      "https://i5.walmartimages.com/seo/Innovative-Designs-Pokemon-Kids-Coloring-Art-and-Sticker-Set-30-Pcs-School-Craft-Supplies-with-Pencil-Case_aad013ab-3aa4-4f9e-862a-1ffc3264063a.51fa9b260e060f331092ce97c70619c5.jpeg",
+    idea: "Liberal politics sticker pack",
+    productList: [
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61o6tgMJiwL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Humorous-Sarcastic-Political-Conservative-Waterproof/dp/B0BLBZGJDC&tag=fbdlabs-20",
+        title:
+          "Amazon.com - 10 Pack Even My Dog Hates Biden Funny Anti Biden ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/511FJ7IocrL._AC_UL210_SR210,210_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Libtard-Political-Pro-Trump-Anti-Liberal-sticker/dp/B079G3PWKY&tag=fbdlabs-20",
+        title:
+          "Amazon.com: 0% Libtard Political Pro-Trump Anti-Liberal NRA Window ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/51NvBnxhJ2L._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Democrat-Donkey-Stickers-Liberal-Political/dp/B07RXHMYWW&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Democrat Donkey - 100 Stickers Pack 2.25 x 1.25 inches ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/61fgEbJmXcS._AC_UL210_SR210,210_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/VOTANTA-Pcs-Pack-Republicans-A1-22062120/dp/B097PSYTS8&tag=fbdlabs-20",
+        title:
+          "Amazon.com - 3 Pcs/Pack - Just A Regular Mom Trying Not to Raise ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/91bVI8DkZUL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Feminist-Stickers-Waterproof-Computer-Aesthetic/dp/B0BC16JDZT&tag=fbdlabs-20",
+        title: "Amazon.com: Feminist Stickers 100pcs Girl Power Stickers ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61Dw4m6AadL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Liberals-Political-Vinyl-Bumper-Stickers/dp/B08FYZDVNF&tag=fbdlabs-20",
+        title:
+          "Amazon.com - Does Not Play Well with Liberals Political Oval Vinyl ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/51kIQSKNHOL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/VictoryStore-Stickers-Believe-Liberal-Bumper/dp/B075JQ6QVF&tag=fbdlabs-20",
+        title:
+          "Amazon.com: VictoryStore Stickers - I Don't Believe The Liberal ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61HfoqNFK7L._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/MAIANEY-3Pcs-Pack-President-Republican/dp/B0B5X5HD4V&tag=fbdlabs-20",
+        title:
+          "Amazon.com - MAIANEY 3Pcs/Pack - Liz Cheney for President 2024 ...",
+      },
     ],
   },
   {
-    idea: "Plantable seed paper bookmarks with Pokemon designs",
-    imageList: [
-      "https://s.alicdn.com/@sc04/kf/Hf15d33b2d40c41d3934506e00de04cb1P.jpg_300x300.jpg",
-      "http://wildlense.com/cdn/shop/files/Plantable-All-Organic-Eco-Seed-Paper-Tags-Labels-Wildlense-387.webp?v=1688805079",
-      "https://s.alicdn.com/@sc04/kf/Hed4a6c6866f54ac5bae7ffff3a2834abf.jpg_300x300.jpg",
-      "https://i.ytimg.com/vi/VN21QpM6HLk/hqdefault.jpg",
-      "https://m.media-amazon.com/images/I/61cHvq2hwUL._AC_UF894,1000_QL80_.jpg",
-      "https://i.etsystatic.com/9556939/r/il/7f8a2d/2968154479/il_fullxfull.2968154479_cfw0.jpg",
-      "https://www.tiktok.com/api/img/?itemId=7321787392132697387&location=0&aid=1988",
-      "https://m.media-amazon.com/images/I/71OZ-Fgt9kL.jpg",
-      "https://s.alicdn.com/@sc04/kf/Hc475e522234d43439dffdbbaf50ff3baa.jpg_300x300.jpg",
-      "https://cdn0.hitched.co.uk/article/5277/3_2/1280/png/107725-wildflower-place-cards.jpeg",
+    idea: "Salsa dance socks",
+    productList: [
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/91HMxFJllUL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/DANCESOCKS-Sneaker-Dancing-Smooth-Floors/dp/B018A0URF4&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Made in USA | The Original Over Sneaker Dance Socks ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/71E3d8SzGxL._AC_UL600_SR600,600_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Glides-Dance-Sneakers-Smooth-Floors/dp/B081ZG79TH&tag=fbdlabs-20",
+        title:
+          "Amazon.com : Glides - Dance Socks Over Sneakers for Smooth Floors ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/715WonHsNrL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Natalie-Dancewear-Kids-Dance-Socks/dp/B0CPZBXM4Y&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Natalie Dancewear Kids Skin Tone Dance Socks Black ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61LMvJXrfDL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Pitping-Professional-Pantyhose-Stockings-Seamless/dp/B075244VBM&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Pitping Professional Latin Dance Pantyhose Stockings ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61501j-1jxL._AC_UY1000_DpWeblab_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Dancing-Training-Sneakers-pivoting-Sliding/dp/B07MNW9TFW&tag=fbdlabs-20",
+        title:
+          "Amazon.com: YAVOUN Socks for Dancing - 4 Pairs, Wearing Dance ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/612Ba6uVxlL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Topyond-Cotton-Stockings-Suitable-Pilates/dp/B0CKPQ3MMQ&tag=fbdlabs-20",
+        title:
+          "Topyond Yoga Socks for Women, Non Slip Grip Cotton Socks, Warm ...",
+      },
     ],
   },
   {
-    idea: "Recycled newspaper pencils for writing and sketching",
-    imageList: [
-      "https://m.media-amazon.com/images/I/61h-vNW8eBL._AC_UF894,1000_QL80_.jpg",
-      "http://nicpro.com/cdn/shop/products/MG443-1.jpg?v=1672994512",
-      "https://m.media-amazon.com/images/I/61h-vNW8eBL.jpg",
-      "https://admin.tradesala.com/public/product-images/large/20220120-61e9473696420.jpg",
-      "https://m.media-amazon.com/images/I/51XuAaTSsZL._AC_.jpg",
-      "https://nicpro.com/cdn/shop/products/MG443-7.jpg?v=1672994511&width=1200",
-      "https://m.media-amazon.com/images/I/81X-f01LSJL._AC_UF894,1000_QL80_.jpg",
-      "https://www.jiomart.com/images/product/original/rvver9hoae/goodwill-tech-novelty-store-eco-friendly-recycled-newspaper-pencils-for-sketching-writing-pack-of-150-product-images-orvver9hoae-p594504956-0-202210151331.jpg?im=Resize=(420,420)",
-      "https://m.media-amazon.com/images/I/617SadlnVML.jpg",
-      "https://smallprintcompany.com/wp-content/uploads/2020/07/P7270035-scaled-e1595876234521.jpg",
+    idea: "Feminist button badges set",
+    productList: [
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/71acyYaIKfL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Panic-Buttons-WOMENS-HISTORY-FEMINIST/dp/B09TY74BLG&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Panic Buttons WOMEN'S HISTORY MONTH x 20 NEW 1 Inch ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/51R5sWS00uL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/FEMINIST-Pinback-Button-Feminism-Anti-Sexist/dp/B003O9AU4A&tag=fbdlabs-20",
+        title:
+          'Amazon.com: Set of 9 FEMINIST Pinback Button 1.25" Pin/Badge ...',
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/7176svfbYuL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Feminist-Novelty-Buttons-Clothes-Backpacks/dp/B0C5WYXY75&tag=fbdlabs-20",
+        title:
+          "Amazon.com: 24 Pcs Feminist Pin,Feminist Power Brooch Women's ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/61zDHRv7o5L._AC_UL210_SR210,210_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Charmart-Merciful-Feminist-Female-Feminism/dp/B07MDJ1GDZ&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Charmart Be Just Merciful and Brave Feminist Lapel Pin ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/71D-QNjSxCL._AC_UY1000_DpWeblab_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Empowered-Feminist-Suffrage-Button-Valentine/dp/B08J9MCBYQ&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Power Pins for the Empowered Woman. Feminist Pins ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/71EEtzU94VL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Girl-Power-Feminist-Female-Buttons/dp/B076HCMQSD&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Girl Power - Feminist/Female Buttons for Women's ...",
+      },
     ],
   },
   {
-    idea: "Pokémon eco-friendly tote bag",
-    imageList: [
-      "https://solidpop.com/wp-content/uploads/2022/05/Bulbasaur-Pokemon-Tote-Bag.jpg",
-      "https://ae01.alicdn.com/kf/S1916e33cdaa2446db2a93e6170ca07e3D.jpg_640x640Q90.jpg_.webp",
-      "https://i.ebayimg.com/images/g/ejcAAOSwt3JjtDWn/s-l400.jpg",
-      "https://ae01.alicdn.com/kf/S7a4b33c9b63f42ddb135cd92e8166be05.jpg_640x640Q90.jpg_.webp",
-      "https://i.ebayimg.com/images/g/2uAAAOSw1HdjbezI/s-l1200.jpg",
-      "https://ae01.alicdn.com/kf/S60ad3c0a59f34c41b5742f50045e7669S.jpg_640x640Q90.jpg_.webp",
-      "https://i.etsystatic.com/27416399/r/il/5894fb/3081491208/il_570xN.3081491208_dljt.jpg",
-      "https://ae01.alicdn.com/kf/S3f51e1645fd143089011a2592b9853f1v.jpg_640x640Q90.jpg_.webp",
-      "https://images-cdn.ubuy.co.id/6508ec6376c9135fb8199f08-anime-one-piece-nami-shoulder-bag-female.jpg",
-      "https://ae01.alicdn.com/kf/Se18c2439e15a4a05b98bb6f4a46c1bd74.jpg_640x640Q90.jpg_.webp",
+    idea: "Political statement tote bag",
+    productList: [
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/71q6EAEBwoL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Think-Illegal-Political-Statement-Resist/dp/B09DCMSM84&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Think It's Not Illegal Yet Political Statement Resist ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/71eYnqT65oL._SLDPMOBCAROUSELAUTOCROP288221_MCnd_AC_SR462,693_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Free-Speech-Awake-Political-Censorship/dp/B09213GXLL&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Free Speech - Awake Not Woke - Political Censorship ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/71dw1RJJ1ZL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Defund-Democrats-Liberal-Republican-Political/dp/B08P752VJW&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Defund Democrats - Anti Liberal - Republican Political ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/71LqKN1EvJL._SLDPMOBCAROUSELAUTOCROP288221_MCnd_AC_SR462,693_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Jokes-defuse-tense-situations-Tote/dp/B0CGMTJ84M&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Jokes are a way to defuse tense situations Tote Bag ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61atkZ6rr2L._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Truth-Speech-Honesty-Political-Reality/dp/B09NQW9DSY&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Truth The New Hate Speech Hater Honesty Political ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/71LFowSWS6L._SLDPMOBCAROUSELAUTOCROP288221_MCnd_AC_SR462,693_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/He-Rizzen-Funny-Jesus-Statement/dp/B0CT5K84T4&tag=fbdlabs-20",
+        title:
+          "Amazon.com: He Is Rizzen - Funny Jesus Rizz Meme Slang Humor ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/617fdyoq+uL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Progressive-Political-Activist-Statement-Independence/dp/B0C6G8ZPSN&tag=fbdlabs-20",
+        title: "Amazon.com: Kids are Still in Body Bags T-Shirt, July 4th ...",
+      },
     ],
   },
   {
-    idea: "Mini succulent plant in a Pokeball planter",
-    imageList: [
-      "https://i.etsystatic.com/21360368/r/il/8063e0/2721281674/il_570xN.2721281674_428z.jpg",
-      "https://i.pinimg.com/736x/74/99/17/749917c90a3bf134c9a774c4b0acdb71.jpg",
-      "https://i.etsystatic.com/29497105/r/il/ce0587/3511972872/il_570xN.3511972872_k034.jpg",
-      "https://i.pinimg.com/736x/11/41/5c/11415c8fe05aa80b61d16dd8ef000305.jpg",
-      "https://i.etsystatic.com/15077519/r/il/d1cd99/5736135737/il_570xN.5736135737_spm1.jpg",
-      "https://i.ebayimg.com/images/g/Ya4AAOSw825i2dyX/s-l1200.webp",
-      "https://i.etsystatic.com/34713330/r/il/3ff75d/3715504182/il_570xN.3715504182_1xj7.jpg",
-      "https://m.media-amazon.com/images/I/618p8auAwfL._AC_UF894,1000_QL80_.jpg",
-      "https://i.etsystatic.com/29497105/r/il/ce0587/3511972872/il_300x300.3511972872_k034.jpg",
-      "https://m.media-amazon.com/images/I/618p8auAwfL.jpg",
+    idea: "#GirlBoss mug for her morning coffee",
+    productList: [
+      {
+        imageUrl: "https://m.media-amazon.com/images/I/41cQILqDuQL.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Brand-Shape-Narrative-Vision-Perception-ebook/dp/B0BKR5LW76&tag=fbdlabs-20",
+        title:
+          "Amazon.com: On Brand: Shape Your Narrative. Share Your Vision ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/91UE0WbMKdL._AC_UL600_SR600,600_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Girl-Wash-Your-Face-Believing/dp/1400201659&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Girl, Wash Your Face: Stop Believing the Lies About ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/6156woqr7NL._AC_UL900_SR615,900_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Girl-Code-Unlocking-Happiness-Entrepreneur/dp/0525533087&tag=fbdlabs-20",
+        title:
+          "Girl Code: Unlocking the Secrets to Success, Sanity, and Happiness ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/91nH1JiFTIL._AC_UL600_SR600,600_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Girl-Wash-Your-Face/dp/1400220807&tag=fbdlabs-20",
+        title:
+          "Girl, Wash Your Face: Stop Believing the Lies About Who You Are so ...",
+      },
     ],
   },
   {
-    idea: "Upcycled book page art prints of her favorite Pokémon characters",
+    idea: "'Nevertheless, She Persisted' keychain",
+    productList: [
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61HvQsdMIqL._UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Nevertheless-She-Persisted-Keyring-Inspirational/dp/B07YJ6TZBB&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Nevertheless She Persisted Keyring - Personalized Gift ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/61H5cGsOG4L._SLDPMOBCAROUSELAUTOCROP288221_MCnd_AC_SR462,693_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Nevertheless-Persisted-Pink-2-25-Keychain/dp/B06XCGD3KG&tag=fbdlabs-20",
+        title: 'Amazon.com: Nevertheless She Persisted Pink 2.25" Keychain ...',
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61d9TnwH34L._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Nevertheless-Persisted-Solidarity-Political-Affirmation/dp/B072JR2J4N&tag=fbdlabs-20",
+        title:
+          "Amazon.com: LParkin Nevertheless She Persisted Feminism Feminist ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61h9MAYPrHL._AC_UY1000_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Warned-Explanation-Nevertheless-Persisted-Keychain/dp/B06XCG96Z4&tag=fbdlabs-20",
+        title:
+          "Amazon.com: She was Warned given an Explanation Nevertheless She ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/61rzBRSrowL._SLDPMOBCAROUSELAUTOCROP288221_MCnd_AC_SR462,693_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Uterus-Feminist-Women-Keychain-Keyring/dp/B07DCKXNNT&tag=fbdlabs-20",
+        title:
+          "GuDeKe Grow A Pair Uterus Feminist Women Keychain Keyring Funny ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/31vKVAGoT-L._AC_SY580_.jpg",
+        amazonUrl:
+          "https://www.amazon.ae/Nevertheless-Persisted-Necklace-Feminist-Inspirational/dp/B07H2JD64R&tag=fbdlabs-20",
+        title: "Ms. Clover Nevertheless She Persisted Necklace, Feminist ...",
+      },
+      {
+        imageUrl:
+          "https://images-na.ssl-images-amazon.com/images/I/710sPynmVoL._SLDPMOBCAROUSELAUTOCROP288221_MCnd_AC_SR462,693_.jpg",
+        amazonUrl: "https://www.amazon.com/-/he/dp/B09SGHGXL4&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Womens Real Men Make Twins Funny Father Dad Papa Twin ...",
+      },
+    ],
   },
   {
-    idea: "Pokémon washi tape for crafting or journaling projects",
+    idea: "'Empowered Women Empower Women' poster print",
+    productList: [
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61r7SOXxPdL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Empowered-Women-Empower-background-photograph/dp/B08T6LK74C&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Govivo Empowered Women, Empower Women - Wall Decor Art ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61nPA3tuf-L._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/TANXM-Diversity-Inspirational-Feminist-Printing/dp/B09FJPC1T1&tag=fbdlabs-20",
+        title:
+          "Amazon.com: TANXM Girl Power Diversity Poster,Inspirational ...",
+      },
+      {
+        imageUrl: "https://m.media-amazon.com/images/I/61rw4uVQ-NL.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Influential-Inspirational-Empowerment-Motivational-Classroom/dp/B09ZQJS9SN&tag=fbdlabs-20",
+        title: "Amazon.com: TANXM Powerful Women Print, Feminist Wall Art ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/51BzdteGRPL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Affirmations-Framed-Poster-Affirmation-Empowerment/dp/B0BJN2LTQK&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Affirmations Women Framed Poster, Affirmation Poster ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/410nVPqoC9L._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Feminist-Female-Empowerment-Symbol-Poster/dp/B07HTQX5GX&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Feminist Female Empowerment Symbol Girl Power Fist ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/71dH8KA+AuL._UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Bad-Girls-Get-Done-Empowered/dp/B0C6PPK9MW&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Bad Girls Get It Done - Empowered Women Poster - Frida ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/71ngnPGbF-L._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/IGMA-Behaved-Rarely-History-Poster/dp/B0CQDCM4QP&tag=fbdlabs-20",
+        title:
+          "Amazon.com: IGMA Well Behaved Women Rarely Make History Poster ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/717zx0+s6oL._AC_UF1000,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Unlocked-How-Empowered-Women-Empower/dp/1636767427&tag=fbdlabs-20",
+        title: "Unlocked: How Empowered Women Empower Women: Finette, Jane ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/613yNR-a2uL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/SaNavie-Empowered-Empower-Feminist-Justice/dp/B0B9JX7YNN&tag=fbdlabs-20",
+        title: "Amazon.com: SaNavie Empowered Women Empower Women Wall Art ...",
+      },
+    ],
   },
   {
-    idea: "Sustainable bamboo pen set with cute Pokemon motifs",
-  },
-  {
-    idea: "Handmade recycled glass pendant necklace featuring a nature-inspired design",
+    idea: "'Code Like a Girl' laptop decal",
+    productList: [
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/51XcKxgY6hL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://us.amazon.com/Code-Teens-Like-Laptop-Journaling/dp/B09L3WDY44&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Code Teens Like Laptop A Journaling Girl Kids - Bike ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/61dFeLVu9YL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Sticker-Decal-Funny-Science-Genius/dp/B07V9LMB5Q&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Code Like A Girl Sticker Decal Funny Geek Nerd Science ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/31VnYKM1GRL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Sticker-Blogger-Stickers-Laptop-Bottle/dp/B0CKPFGDYL&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Kiss Cut, Funny Sticker Just A Girl Who Blogs, Blogger ...",
+      },
+      {
+        imageUrl:
+          "https://m.media-amazon.com/images/I/31vxGZpANCL._AC_UF894,1000_QL80_.jpg",
+        amazonUrl:
+          "https://www.amazon.com/Stickers-Coding-Empowered-Feminist-Sticker/dp/B0CBC1WD6P&tag=fbdlabs-20",
+        title:
+          "Amazon.com: Stickers Vinyl Coding Code Girl Women Coder Empowered ...",
+      },
+    ],
   },
 ];

@@ -13,7 +13,7 @@ export default async function googleProgProductSearch(args) {
   const RETRIEVE_DELAY_MS = 50;
   const startDate = new Date();
 
-  const dataList = await Promise.all(
+  let dataList = await Promise.all(
     args.inList.map(async (kw, kwIdx) => {
       try {
         await timeoutPromise(kwIdx * RETRIEVE_DELAY_MS);
@@ -21,7 +21,8 @@ export default async function googleProgProductSearch(args) {
         const params = {
           key: process.env.GOOGLE_PROG_SEARCH_KEY,
           cx: process.env.GOOGLE_PROG_SEARCH_ENGINE_ID,
-          q: kw,
+          q: kw + " inurl:amazon",
+          searchType: "image",
         };
 
         const res = await fetch(
@@ -36,28 +37,21 @@ export default async function googleProgProductSearch(args) {
         const resObj = await res.json();
         const itemsList = resObj.items;
 
-        let data = itemsList.map((item) => {
+        let resList = itemsList.map((item) => {
           try {
-            const { link, pagemap } = item;
-            if (!link.includes("/dp/")) {
-              throw "Not DP";
+            const { link, image, title } = item;
+
+            const toAdd = {
+              imageUrl: link,
+              amazonUrl: image.contextLink,
+              title,
+            };
+
+            if (!toAdd.amazonUrl.includes("/dp")) {
+              throw "No DP";
             }
 
-            const { metatags, cse_image } = pagemap;
-            if (!metatags) {
-              throw "No metatags";
-            }
-
-            if (!cse_image) {
-              throw "No image";
-            }
-
-            const metaEl = metatags[0];
-
-            const image = cse_image[0].src;
-            const title = metaEl["og:title"];
-
-            return { link, image, title };
+            return { isError: false, data: toAdd };
           } catch {
             return {
               isError: true,
@@ -65,12 +59,32 @@ export default async function googleProgProductSearch(args) {
           }
         });
 
-        data = data.filter((obj) => !obj.isError);
+        resList = resList.filter((obj) => !obj.isError);
+
+        const asinSet = new Set();
+        const newList = [];
+
+        for (let resIdx = 0; resIdx < resList.length; resIdx++) {
+          const resObj = resList[resIdx];
+          const { amazonUrl } = resObj.data;
+          const dpStr = "/dp/";
+          const dpIdx = amazonUrl.indexOf(dpStr);
+          const asin = amazonUrl.slice(dpIdx + dpStr.length);
+          if (asinSet.has(asin)) continue;
+
+          // Add tag to amazonUrl
+          resObj.data.amazonUrl += "&tag=fbdlabs-20";
+
+          asinSet.add(asin);
+          newList.push(resObj.data);
+        }
+
+        resList = newList;
 
         return {
           isError: false,
           kw,
-          data,
+          resList,
         };
       } catch (error) {
         return { isError: true, kw, errorObj: error };
@@ -81,7 +95,7 @@ export default async function googleProgProductSearch(args) {
   const toReturn = {};
   dataList.forEach((obj) => {
     if (!obj.isError) {
-      toReturn[obj.kw] = obj.data;
+      toReturn[obj.kw] = obj.resList;
     }
   });
 

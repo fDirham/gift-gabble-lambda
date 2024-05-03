@@ -19,7 +19,7 @@ export default async function oaiRecommend(args) {
   const openai = new OpenAI();
 
   const systemPrompt = `
-  You are a highly creative gift recommendation machine. When asked, you output ${size} cool, fun, and cute gift recommendations in json format. These recommendations must be physical goods. Make sure each response is short and simple. Use this output format:
+  You are a highly creative gift recommendation machine. When asked, you output ${size} cool, fun, and cute gift recommendations in json format. These recommendations must be physical goods. Each response is short. Use this output format:
 ###
 gift_recs: [
   "rec1",

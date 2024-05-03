@@ -1,11 +1,15 @@
 import { formatErrorResponse } from "./formatResponse.mjs";
 import amazonSearchHandler from "./routes/amazonSearchHandler.mjs";
+import oxylabsAmazonProdSearchHandler from "./routes/oxylabsAmazonProdSearchHandler.mjs";
 import recommendHandler from "./routes/recHandler.mjs";
 
 export default async function mainAPI(bodyParams) {
   const ROUTE_DICT = {
     REC: {
       handler: () => recommendHandler(bodyParams),
+    },
+    OXYLABS_AMAZON_PROD_SEARCH: {
+      handler: () => oxylabsAmazonProdSearchHandler(bodyParams),
     },
     AMZN_SEARCH: {
       handler: () => amazonSearchHandler(bodyParams),

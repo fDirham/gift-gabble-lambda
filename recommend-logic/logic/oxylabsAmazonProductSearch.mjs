@@ -51,7 +51,6 @@ export default async function oxylabsAmazonProductSearch(args) {
         });
 
         const resData = await res.json();
-        console.log(resData);
         const resultsObj = resData.results[0].content.results;
         const organicResults = resultsObj.organic;
         const productList = [];
@@ -60,18 +59,48 @@ export default async function oxylabsAmazonProductSearch(args) {
         if (organicResults && organicResults.length) {
           for (let i = 0; i < organicResults.length; i++) {
             const obj = organicResults[i];
-            const { url, price, title, url_image, currency, rating } = obj;
+            const {
+              url,
+              price,
+              title,
+              url_image,
+              currency,
+              rating,
+              is_prime,
+              asin,
+              reviews_count,
+            } = obj;
             if (!url.includes("/dp/")) {
               continue;
             }
 
-            const toAdd = { url, title };
+            const toAdd = {
+              title,
+              isPrime: is_prime,
+              imageUrl: url_image,
+              asin,
+            };
             if (currency && currency == "USD" && price) {
               toAdd.price = price;
+              toAdd.currencySymbol = "$";
             }
             if (rating) {
               toAdd.rating = rating;
             }
+            if (reviews_count) {
+              toAdd.reviewsCount = reviews_count;
+            }
+
+            // Format url
+            let linkUrl = url;
+            if (!url.includes("amazon.com"))
+              linkUrl = "https://amazon.com" + linkUrl;
+            if (url.includes("?")) linkUrl += "&";
+            else linkUrl += "?";
+            linkUrl += "tag=fbdlabs-20";
+
+            toAdd.linkUrl = linkUrl;
+
             productList.push(toAdd);
           }
         }
@@ -82,7 +111,7 @@ export default async function oxylabsAmazonProductSearch(args) {
           data: productList,
         };
       } catch (error) {
-        console.log(kw, error);
+        console.error(kw, error);
         return { isError: true, kw, error };
       }
     })

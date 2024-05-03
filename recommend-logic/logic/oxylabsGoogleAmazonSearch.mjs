@@ -32,8 +32,8 @@ export default async function oxylabsGoogleAmazonSearch(args) {
         };
 
         const auth = {
-          username: process.env.OXYLABS_USERNAME,
-          password: process.env.OXYLABS_PASSWORD,
+          username: process.env.OXYLABS_SERP_USERNAME,
+          password: process.env.OXYLABS_SERP_PASSWORD,
         };
 
         const reqHeaders = new Headers();

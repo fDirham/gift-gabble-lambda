@@ -16,12 +16,15 @@ export default async function googleProgProductSearch(args) {
   let dataList = await Promise.all(
     args.inList.map(async (kw, kwIdx) => {
       try {
+        // Break down keywords
+        const tmpKw = kw.split(" ").slice(0, 4).join(" ");
+
         await timeoutPromise(kwIdx * RETRIEVE_DELAY_MS);
 
         const params = {
           key: process.env.GOOGLE_PROG_SEARCH_KEY,
           cx: process.env.GOOGLE_PROG_SEARCH_ENGINE_ID,
-          q: kw + " inurl:amazon",
+          q: tmpKw + " inurl:amazon",
           searchType: "image",
         };
 
@@ -73,7 +76,19 @@ export default async function googleProgProductSearch(args) {
           if (asinSet.has(asin)) continue;
 
           // Add tag to amazonUrl
-          resObj.data.amazonUrl += "&tag=fbdlabs-20";
+          let newAmazonUrl = resObj.data.amazonUrl;
+          if (newAmazonUrl.includes("?")) newAmazonUrl += "&";
+          else newAmazonUrl += "?";
+          newAmazonUrl += "tag=fbdlabs-20";
+
+          resObj.data.amazonUrl += newAmazonUrl;
+
+          // Clean title
+          let newTitle = resObj.data.title;
+          newTitle = newTitle.replace("Amazon.com:", "");
+          newTitle = newTitle.replace("Amazon.com -", "");
+          newTitle = newTitle.replace("Amazon.com", "");
+          resObj.data.title = newTitle;
 
           asinSet.add(asin);
           newList.push(resObj.data);

@@ -55,6 +55,11 @@ export default async function rainforestAmazonSearch(args) {
             priceNum = null;
           }
 
+          let priceSymbol = null;
+          if (priceNum) {
+            priceSymbol = curr.price.symbol || null;
+          }
+
           return {
             title: curr.title,
             asin: curr.asin,
@@ -63,7 +68,7 @@ export default async function rainforestAmazonSearch(args) {
             rating: curr.rating,
             ratingsTotal: curr.ratings_total,
             priceNum,
-            priceSymbol: curr.price.symbol || null,
+            priceSymbol,
             priceStr: priceNum ? priceNum + "" : null,
             isPrime: curr.is_prime || false,
           };

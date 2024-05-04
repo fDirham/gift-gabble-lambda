@@ -25,7 +25,6 @@ export default async function oxylabsAmazonProductSearch(args) {
         const reqBody = {
           source: "amazon_search",
           domain: "com",
-          domain: "com",
           query: kw,
           parse: true,
           // geo_location: "California,United States", //TODO: Localize per user

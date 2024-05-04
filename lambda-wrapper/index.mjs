@@ -1,14 +1,18 @@
 import recommendLogic from "../recommend-logic/index.mjs";
 
 export const handler = async (event) => {
-  const queryParams = event.queryStringParameters;
+  let reqBody = event.body;
 
   let statusCode = 200;
   let body = null;
 
   try {
-    console.log("Starting recommend", { queryParams });
-    const res = await recommendLogic(queryParams);
+    try {
+      reqBody = JSON.parse(reqBody);
+    } catch {}
+
+    console.log(reqBody);
+    const res = await recommendLogic(reqBody);
 
     statusCode = res.statusCode;
     body = res.body;

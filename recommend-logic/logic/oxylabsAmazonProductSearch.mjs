@@ -1,8 +1,6 @@
 import { getTimeDifference, timeoutPromise } from "../../utilities/helpers.mjs";
 
 export default async function oxylabsAmazonProductSearch(args) {
-  const RETRIEVE_DELAY_MS = 250;
-
   const { isDummy } = args;
   if (isDummy) {
     // TODO
@@ -12,7 +10,7 @@ export default async function oxylabsAmazonProductSearch(args) {
   const startDate = new Date();
 
   let { inList } = args;
-  const MAX_RETRIEVE_SIZE = 6;
+  const MAX_RETRIEVE_SIZE = 5;
   if (inList.length > MAX_RETRIEVE_SIZE) {
     inList = inList.slice(0, MAX_RETRIEVE_SIZE);
   }
@@ -44,6 +42,8 @@ export default async function oxylabsAmazonProductSearch(args) {
 }
 
 const getProductDataList = async (inList) => {
+  const RETRIEVE_DELAY_MS = 250;
+
   return await Promise.all(
     inList.map(async (kw, kwIdx) => {
       try {

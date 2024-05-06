@@ -17,7 +17,34 @@ export default async function oxylabsAmazonProductSearch(args) {
     inList = inList.slice(0, MAX_RETRIEVE_SIZE);
   }
 
-  const productDataList = await Promise.all(
+  let productDataList = await getProductDataList(inList);
+
+  // Check for failures and retry one time
+  const failedList = productDataList
+    .filter((e) => e.isError)
+    .map((obj) => obj.kw);
+  if (failedList.length) {
+    const failedRetry = await getProductDataList(failedList);
+    productDataList = [...productDataList, ...failedRetry].filter(
+      (e) => !e.isError
+    );
+  }
+
+  const toReturn = {};
+  productDataList.forEach((obj) => {
+    if (!obj.isError) {
+      toReturn[obj.kw] = obj.data;
+    }
+  });
+
+  const endDate = new Date();
+  const timeDiff = getTimeDifference(startDate, endDate);
+
+  return { isError: false, productDataDict: toReturn, timeDiff };
+}
+
+const getProductDataList = async (inList) => {
+  return await Promise.all(
     inList.map(async (kw, kwIdx) => {
       try {
         await timeoutPromise(kwIdx * RETRIEVE_DELAY_MS);
@@ -115,16 +142,4 @@ export default async function oxylabsAmazonProductSearch(args) {
       }
     })
   );
-
-  const toReturn = {};
-  productDataList.forEach((obj) => {
-    if (!obj.isError) {
-      toReturn[obj.kw] = obj.data;
-    }
-  });
-
-  const endDate = new Date();
-  const timeDiff = getTimeDifference(startDate, endDate);
-
-  return { isError: false, productDataDict: toReturn, timeDiff };
-}
+};
